@@ -1,5 +1,5 @@
 ---
-title: "The Four Assets the AEO Loop Optimizes"
+title: "The Four Content Assets the AEO Growth Loop Optimizes"
 sidebarTitle: "Four Assets"
 description: "The AEO loop improves four assets AI agents read: Shopify product pages, JSON-LD structured data, the Shopify Knowledge Base, and a Mintlify docs site."
 ---
@@ -29,19 +29,43 @@ JSON-LD schema is the most direct signal to AI search agents. The loop generates
 These are stored as `aeo.*` metafields on each product. A Liquid snippet you install once into your theme reads these metafields and injects the JSON-LD into the page `<head>` automatically. Once installed, all future loop runs update the values without any further theme work.
 
 ```json
-{
-  "@context": "https://schema.org",
-  "@type": "Product",
-  "name": "Magnesium Complex 300mg",
-  "sku": "MAG-300-90",
-  "brand": { "@type": "Brand", "name": "SonoHealth" },
-  "offers": {
-    "@type": "Offer",
-    "price": "29.99",
-    "priceCurrency": "USD",
-    "availability": "https://schema.org/InStock"
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Magnesium Complex 300mg",
+    "sku": "MAG-300-90",
+    "brand": { "@type": "Brand", "name": "SonoHealth" },
+    "offers": {
+      "@type": "Offer",
+      "price": "29.99",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is Magnesium Complex 300mg used for?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Magnesium Complex 300mg supports muscle relaxation, sleep quality, and healthy nerve function. It combines three bioavailable magnesium forms for optimal absorption."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How many capsules are in one bottle?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Each bottle contains 90 capsules, providing a 90-day supply at the recommended one capsule per day serving."
+        }
+      }
+    ]
   }
-}
+]
 ```
 
 ## 3. Shopify Knowledge Base

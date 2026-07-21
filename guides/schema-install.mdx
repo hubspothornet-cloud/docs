@@ -1,5 +1,5 @@
 ---
-title: "Install the JSON-LD Schema Snippet in Your Theme"
+title: "Install the AEO JSON-LD Schema Snippet in Your Store"
 sidebarTitle: "Schema Install"
 description: "One-time installation of the AEO loop's Liquid schema snippet gives every product page automatic JSON-LD structured data fed from aeo.* metafields."
 ---
@@ -36,11 +36,15 @@ These files appear in your docs repo as uncommitted changes after the first run.
     Click **Save**.
   </Step>
   <Step title="Include the snippet in your product template">
-    Find your product template file — usually `templates/product.json` or `sections/main-product.liquid` — and add the following snippet include where you want the schema to render:
+    Open your product section file — usually `sections/main-product.liquid` (or whatever section your `templates/product.json` points to). Add the following line inside the `<head>` block or just before the closing `</article>` tag of the product section, wherever you want the schema to render:
 
     ```liquid
     {% render 'aeo-schema' %}
     ```
+
+    <Note>
+      If your theme uses a JSON template (`templates/product.json`), you cannot add Liquid tags directly to that file. Instead, open the `.liquid` section file it references — look for `"type": "main-product"` in the JSON to find the correct section name.
+    </Note>
   </Step>
   <Step title="Verify the schema is live">
     Save the template, then navigate to a product page on your storefront. Right-click → **View Page Source** → search for `application/ld+json`. You should see the JSON-LD block generated from your `aeo.*` metafields.

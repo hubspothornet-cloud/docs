@@ -1,7 +1,7 @@
 ---
-title: "How the Daily AEO Loop Runs Each Day"
+title: "How the AEO Growth Loop Works: The Daily Run Sequence"
 sidebarTitle: "How It Works"
-description: "Each daily run reads Shopify analytics, picks a focus product, writes Knowledge Base Q&As, optimizes the PDP and schema, drafts docs articles, and leaves a run report."
+description: "Each run picks a focus product, writes Knowledge Base Q&As, optimizes the product page and structured data, drafts docs articles, and files a run report."
 ---
 
 On each scheduled run, the loop executes a fixed sequence of steps autonomously inside Claude. It uses the Shopify connector for analytics reads, product updates, and metaobject writes — and edits your docs repo through a connected local folder. Nothing is committed or pushed to your docs site without your review; the agent deliberately stops short of git operations and leaves all docs changes as working-tree files for you to inspect first.

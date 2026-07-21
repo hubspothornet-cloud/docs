@@ -1,5 +1,5 @@
 ---
-title: "Connect Your Shopify Store to Claude"
+title: "Connect Your Shopify Store to Claude Using the Connector"
 sidebarTitle: "Shopify Connection"
 description: "Install the Shopify connector in Claude to give the loop access to analytics, product data, metafields, and metaobjects via the Shopify Admin API."
 ---
@@ -41,7 +41,8 @@ The connector provides the following tools used by the loop:
 | `run-analytics-query` | Runs ShopifyQL queries to read traffic and conversion data |
 | `graphql_query` | Reads product data, metafields, and metaobjects |
 | `graphql_mutation` | Writes metafields (`aeo.*` namespace), creates/updates `qa-pair` metaobjects, and updates product `descriptionHtml` |
-| Product read/update tools | Handles structured PDP changes |
+| `product read` | Retrieves full product details including variants, media, and existing metafields |
+| `product update` | Applies structured PDP changes — title, body, metafields — back to the product record |
 
 <Note>
   One thing the API can't see: Shopify's true Agentic Storefronts revenue panel is not exposed via the API or ShopifyQL. The loop reports referrer-based AI numbers as a lower bound — you'll need to read the real figure in **Shopify Admin → Agentic Storefronts** yourself.
