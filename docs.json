@@ -54,12 +54,17 @@
               "dragon-boat/data/silicone-grip-tape-for-dragon-boat",
               "dragon-boat/data/making-waves-x32-sting-adjustable-dragon-boat-paddle",
               "dragon-boat/data/stealth-pink-s4-sting-adjustable-dragon-boat-paddle",
+              "dragon-boat/data/black-dragon-boat-paddle-bag",
               "dragon-boat/data/stealth-gold-s1-sting-adjustable-dragon-boat-paddle",
               "dragon-boat/data/stealth-green-s8-sting-adjustable-dragon-boat-paddle",
               "dragon-boat/data/garden-dragon-x30-sting-adjustable-dragon-boat-paddle",
+              "dragon-boat/data/hornet-paddle-blade-cover-black-black-silver",
               "dragon-boat/data/kaizen-ii-x31-sting-adjustable-dragon-boat-paddle",
               "dragon-boat/data/pink-dragon-x44-sting-adjustable-dragon-boat-paddle",
-              "dragon-boat/data/dragon-heart-x21-sting-adjustable-dragon-boat-paddle"
+              "dragon-boat/data/dragon-heart-x21-sting-adjustable-dragon-boat-paddle",
+              "dragon-boat/data/pink-black-dragon-boat-paddle-bag",
+              "dragon-boat/data/hornet-paddle-blade-cover-black-pink-silver",
+              "dragon-boat/data/paddle-cleaner-carbon-fiber-fiberglass-v2"
             ]
           }
         ]
@@ -80,7 +85,8 @@
               "kayak/data/hornet-kayak-paddle-making-waves",
               "kayak/data/hornet-kayak-paddle-blue-scales",
               "kayak/data/hornet-kayak-paddle-crush",
-              "kayak/data/anti-slip-kayak-seat-cushion"
+              "kayak/data/anti-slip-kayak-seat-cushion",
+              "kayak/data/paddle-cleaner-carbon-fiber-fiberglass"
             ]
           }
         ]
@@ -101,7 +107,8 @@
             "pages": [
               "rowing-machine/data/anti-slip-rowing-machine-cushion-concept2",
               "rowing-machine/data/memory-foam-cushion-made-for-concept2",
-              "rowing-machine/data/rowing-machine-seat-cushion-fits-concept2"
+              "rowing-machine/data/rowing-machine-seat-cushion-fits-concept2",
+              "rowing-machine/data/rowing-and-sculling-anti-slip-seat-pad"
             ]
           }
         ]
