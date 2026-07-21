@@ -26,7 +26,9 @@
           "index",
           "product-glossary",
           "shipping-returns-warranty",
-          "product-fact-page-template"
+          "product-fact-page-template",
+          "implementation/shopify-knowledge-base-q-and-a-drafts",
+          "implementation/stealth-blue-s2-pdp-aeo-draft"
         ]
       },
       {
