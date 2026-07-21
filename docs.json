@@ -1,7 +1,7 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Mintlify Starter Kit",
+  "name": "Hornet Watersports Guides",
   "colors": {
     "primary": "#16A34A",
     "light": "#07C983",
@@ -18,20 +18,55 @@
         ]
       }
     ],
-    "global": {
-      "anchors": [
-        {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
-        },
-        {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
-        }
-      ]
-    }
+    "groups": [
+      {
+        "group": "Start Here",
+        "icon": "house",
+        "pages": [
+          "index",
+          "product-glossary",
+          "shipping-returns-warranty",
+          "product-fact-page-template"
+        ]
+      },
+      {
+        "group": "Dragon Boat",
+        "icon": "water",
+        "pages": [
+          "dragon-boat/introduction",
+          "dragon-boat/dragon-boat-paddle-buying-guide",
+          "dragon-boat/clamp-vs-leverlock-dragon-boat-paddles",
+          "dragon-boat/how-to-choose-dragon-boat-paddle-length",
+          "dragon-boat/idbf-approved-dragon-boat-paddles",
+          "dragon-boat/best-dragon-boat-accessories",
+          "dragon-boat/dragon-boat-seat-pads",
+          "dragon-boat/paddle-bags-blade-covers-and-protection"
+        ]
+      },
+      {
+        "group": "Kayak",
+        "icon": "ship",
+        "pages": [
+          "kayak/introduction",
+          "kayak/kayak-paddle-buying-guide",
+          "kayak/how-to-choose-a-kayak-paddle",
+          "kayak/kayak-seat-cushions",
+          "kayak/kayak-paddle-care-and-cleaning"
+        ]
+      },
+      {
+        "group": "Rowing Machine",
+        "icon": "dumbbell",
+        "pages": [
+          "rowing-machine/introduction",
+          "rowing-machine/rowing-machine-seat-cushion-buying-guide",
+          "rowing-machine/best-rowing-machine-seat-cushions-for-concept2",
+          "rowing-machine/memory-foam-vs-anti-slip-rowing-seat-cushions",
+          "rowing-machine/rowing-seat-pad-vs-rowing-machine-cushion",
+          "rowing-machine/how-to-reduce-rowing-machine-seat-discomfort"
+        ]
+      }
+    ]
   },
   "logo": {
     "light": "/logo/light.svg",
@@ -40,14 +75,22 @@
   "navbar": {
     "links": [
       {
-        "label": "Support",
-        "href": "mailto:hi@mintlify.com"
+        "href": "https://www.hornetwatersports.com/collections/dragon-boat",
+        "label": "Shop Dragon Boat"
+      },
+      {
+        "href": "https://www.hornetwatersports.com/collections/accessories",
+        "label": "Shop Accessories"
+      },
+      {
+        "href": "https://www.hornetwatersports.com/collections/indoor-rowing-1",
+        "label": "Shop Indoor Rowing"
       }
     ],
     "primary": {
       "type": "button",
-      "label": "Dashboard",
-      "href": "https://app.mintlify.com"
+      "label": "Shop Hornet",
+      "href": "https://www.hornetwatersports.com/"
     }
   },
   "contextual": {
@@ -64,9 +107,7 @@
   },
   "footer": {
     "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
     }
-  }
+  },
+  "description": "Buyer guides for Hornet Watersports dragon boat, kayak, and rowing machine products."
 }
