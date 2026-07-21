@@ -50,6 +50,8 @@
             "group": "Verified Product Facts",
             "icon": "clipboard-list",
             "pages": [
+              "dragon-boat/data/sting-plus-graphic-paddle-shared-specs",
+              "dragon-boat/data/stealth-performance-series-shared-specs",
               "dragon-boat/data/crush-x24-sting-adjustable-dragon-boat-paddle",
               "dragon-boat/data/black-glossy-x0-sting-adjustable-dragon-boat-paddle",
               "dragon-boat/data/stealth-blue-s2-sting-adjustable-dragon-boat-paddle",
