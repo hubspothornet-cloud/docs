@@ -80,6 +80,9 @@
         "pages": [
           "kayak/introduction",
           "kayak/kayak-paddle-buying-guide",
+          "kayak/hornet-vs-werner-kayak-paddles",
+          "kayak/why-choose-hornet-fiberglass-kayak-paddles",
+          "kayak/best-kayak-gifts-for-paddlers",
           "kayak/how-to-choose-a-kayak-paddle",
           "kayak/kayak-seat-cushions",
           "kayak/kayak-paddle-care-and-cleaning",
@@ -91,7 +94,12 @@
               "kayak/data/hornet-kayak-paddle-blue-scales",
               "kayak/data/hornet-kayak-paddle-crush",
               "kayak/data/anti-slip-kayak-seat-cushion",
-              "kayak/data/paddle-cleaner-carbon-fiber-fiberglass"
+              "kayak/data/paddle-cleaner-carbon-fiber-fiberglass",
+              "kayak/data/hornet-kayak-paddle-green-scales",
+              "kayak/data/bass-attack-kayak-paddle",
+              "kayak/data/hornet-kayak-paddle-paw-print",
+              "kayak/data/paw-print-anti-slip-kayak-seat-cushion",
+              "kayak/data/non-slip-cushioned-paddling-pants-capri-length"
             ]
           }
         ]
@@ -105,6 +113,7 @@
           "rowing-machine/best-rowing-machine-seat-cushions-for-concept2",
           "rowing-machine/memory-foam-vs-anti-slip-rowing-seat-cushions",
           "rowing-machine/rowing-seat-pad-vs-rowing-machine-cushion",
+          "rowing-machine/best-rowing-machine-gifts-and-accessories",
           "rowing-machine/how-to-reduce-rowing-machine-seat-discomfort",
           {
             "group": "Verified Product Facts",
