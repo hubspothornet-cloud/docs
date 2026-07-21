@@ -40,7 +40,20 @@
           "dragon-boat/idbf-approved-dragon-boat-paddles",
           "dragon-boat/best-dragon-boat-accessories",
           "dragon-boat/dragon-boat-seat-pads",
-          "dragon-boat/paddle-bags-blade-covers-and-protection"
+          "dragon-boat/paddle-bags-blade-covers-and-protection",
+          {
+            "group": "Verified Product Facts",
+            "icon": "clipboard-list",
+            "pages": [
+              "dragon-boat/data/crush-x24-sting-adjustable-dragon-boat-paddle",
+              "dragon-boat/data/black-glossy-x0-sting-adjustable-dragon-boat-paddle",
+              "dragon-boat/data/stealth-blue-s2-sting-adjustable-dragon-boat-paddle",
+              "dragon-boat/data/dragon-boat-seat-pad-with-strap",
+              "dragon-boat/data/dragon-boat-seat-pad-non-slip",
+              "dragon-boat/data/dragon-guard-tip-protector",
+              "dragon-boat/data/silicone-grip-tape-for-dragon-boat"
+            ]
+          }
         ]
       },
       {
@@ -51,7 +64,14 @@
           "kayak/kayak-paddle-buying-guide",
           "kayak/how-to-choose-a-kayak-paddle",
           "kayak/kayak-seat-cushions",
-          "kayak/kayak-paddle-care-and-cleaning"
+          "kayak/kayak-paddle-care-and-cleaning",
+          {
+            "group": "Verified Product Facts",
+            "icon": "clipboard-list",
+            "pages": [
+              "kayak/data/hornet-kayak-paddle-making-waves"
+            ]
+          }
         ]
       },
       {
@@ -63,7 +83,15 @@
           "rowing-machine/best-rowing-machine-seat-cushions-for-concept2",
           "rowing-machine/memory-foam-vs-anti-slip-rowing-seat-cushions",
           "rowing-machine/rowing-seat-pad-vs-rowing-machine-cushion",
-          "rowing-machine/how-to-reduce-rowing-machine-seat-discomfort"
+          "rowing-machine/how-to-reduce-rowing-machine-seat-discomfort",
+          {
+            "group": "Verified Product Facts",
+            "icon": "clipboard-list",
+            "pages": [
+              "rowing-machine/data/anti-slip-rowing-machine-cushion-concept2",
+              "rowing-machine/data/memory-foam-cushion-made-for-concept2"
+            ]
+          }
         ]
       }
     ]
