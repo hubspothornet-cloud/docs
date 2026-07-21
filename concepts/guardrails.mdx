@@ -1,0 +1,43 @@
+---
+title: "AEO Loop Safety Guardrails and Why They Exist"
+sidebarTitle: "Guardrails"
+description: "The AEO loop never touches your theme, never runs git, and never fabricates specs or claims — each guardrail is designed to keep every run safe and reversible."
+---
+
+The AEO Growth Loop is designed to run unattended. These guardrails define exactly what it will and won't do — and why each boundary is set where it is.
+
+<AccordionGroup>
+  <Accordion title="No git, ever">
+    The loop writes files to your local repo folder as uncommitted working-tree changes. It never runs `git add`, `git commit`, or `git push`. This is intentional: a `git` command from an agent working inside a repo can strand a `.git/index.lock` file and block your own commits. Uncommitted working-tree changes *are* the deliverable — you're in control of what gets published.
+  </Accordion>
+
+  <Accordion title="No theme edits, ever">
+    An unattended bad Liquid edit can take down a live storefront. Nothing the loop generates touches your theme files directly. Instead, it stages JSON-LD schema snippets and optional Liquid sections to `outputs/pdp-schema/<product>/` with an `INSTALL.md` guide. You paste each into your theme once; after that, the loop's daily metafield writes flow into the page automatically.
+  </Accordion>
+
+  <Accordion title="Markers and backups on every PDP write">
+    The loop only writes between its own `<!-- AEO:START -->` and `<!-- AEO:END -->` HTML comment markers. Your original content outside the markers is never touched. Before every write, it backs up the full `descriptionHtml` and all `aeo.*` metafields. Any run is reversible: restore the backup and you're back to pre-run state.
+  </Accordion>
+
+  <Accordion title="Never fabricate">
+    The loop will not invent product specs, prices, GTINs, ratings, review counts, or source URLs. If a value isn't present in your `data.mdx` product facts page or verifiable via the Shopify API, it's omitted and flagged in the run report. This is both the compliance floor (fabricated claims carry legal risk, especially for health products) and the growth strategy (AI engines are filtering aggressively for grounded content).
+  </Accordion>
+
+  <Accordion title="Quality over volume">
+    The loop is instructed to write fewer Q&As and shorter articles if it can't clear the quality bar for a given run. Thin content — vague answers, unsupported claims, generic copy — dilutes the signal you're building. A run that writes 15 excellent Q&As is more valuable than one that writes 30 mediocre ones.
+  </Accordion>
+</AccordionGroup>
+
+## What the Blast Radius of Any Run Looks Like
+
+Every change the loop makes is scoped and reversible:
+
+- **New KB Q&As** — reversible: delete the metaobjects in Shopify Admin
+- **PDP answer block** — reversible: restore the pre-run `descriptionHtml` backup
+- **`aeo.*` metafield updates** — reversible: restore the pre-run metafield backup
+- **Staged schema files in `outputs/`** — not live until you install them into your theme
+- **Uncommitted MDX files** — not live until you push to your docs repo
+
+<Note>
+  Nothing the loop does is permanent or hard to undo. The guardrails ensure the worst-case outcome of any run is a few minutes of cleanup.
+</Note>

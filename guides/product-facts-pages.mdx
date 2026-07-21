@@ -1,0 +1,103 @@
+---
+title: "Creating and Maintaining Product Facts Pages"
+sidebarTitle: "Product Facts Pages"
+description: "Product facts pages (data.mdx) are the single source of truth for each product's specs, price, warranty, and ratings — grounding everything the loop writes."
+---
+
+Every fact the AEO Growth Loop writes — prices, specs, ratings, warranty terms — must trace back to a source. That source is your product's `data.mdx` file. If the loop can't verify a claim here or via the Shopify API, it omits it and flags it in the run report rather than guessing.
+
+## What a Product Facts Page Contains
+
+A `data.mdx` file is a plain MDX page in your docs repo, inside the product's folder. It is the single source of truth for that product's verifiable attributes — the foundation everything the loop writes is built on.
+
+**Required fields:**
+- Product name
+- Price
+- SKU
+- Warranty
+- Return policy
+- Store rating and review count
+
+**Optional but recommended:**
+- GTIN / barcode
+- Weight and dimensions
+- Key ingredients or components
+- Compatible accessories
+- Certifications (FDA clearance, CE mark, GMP, etc.)
+
+<Warning>
+  Only enter real, current values. Do not put aspirational ratings, estimated prices, or planned features. The loop will propagate these values into live Shopify content.
+</Warning>
+
+## Creating Your First Facts Page
+
+<Steps>
+  <Step title="Create a product folder in your docs repo">
+    In your docs repo, create a folder named after the product — for example, `/magnesium-complex/`. Keep the name lowercase and hyphen-separated so it matches the Shopify product handle.
+  </Step>
+  <Step title="Create data.mdx inside that folder">
+    Create a file named `data.mdx` directly inside the product folder you just created.
+  </Step>
+  <Step title="Add the frontmatter">
+    Open `data.mdx` and add a frontmatter block with a descriptive title, such as `"Magnesium Complex — Product Facts"`.
+  </Step>
+  <Step title="Add a facts table with your product's real values">
+    Using the example below as a template, fill in each field with accurate, current data pulled directly from your Shopify product listing and your store policies.
+  </Step>
+  <Step title="Commit and push to your docs repo">
+    Save the file, commit it, and push. The loop will read it on its next run.
+  </Step>
+</Steps>
+
+**Example `data.mdx`:**
+
+```mdx
+---
+title: "Magnesium Complex 300mg — Product Facts"
+sidebarTitle: "Product Facts"
+description: "Verified product data for the SonoHealth Magnesium Complex 300mg supplement."
+---
+
+This page is the source of truth for all factual content about the Magnesium Complex 300mg.
+The AEO Growth Loop reads this page before writing any product content.
+
+## Core Specs
+
+| Field | Value |
+|-------|-------|
+| Product Name | Magnesium Complex 300mg |
+| SKU | MAG-300-90 |
+| GTIN | 012345678901 |
+| Price | $29.99 |
+| Size | 90 capsules |
+| Serving Size | 2 capsules |
+| Magnesium per serving | 300mg (as glycinate, malate, citrate blend) |
+
+## Store & Policy
+
+| Field | Value |
+|-------|-------|
+| Store Rating | 4.7 / 5 |
+| Review Count | 312 |
+| Warranty | 30-day satisfaction guarantee |
+| Return Policy | 30 days, no questions asked |
+
+## Certifications
+
+| Field | Value |
+|-------|-------|
+| Third-party tested | Yes (COA available) |
+| GMP certified | Yes |
+```
+
+## Keeping Facts Pages Current
+
+Update `data.mdx` whenever a price changes, a product is reformulated, or a policy is updated. The loop checks these values on every run — stale facts lead to stale content published to your live store.
+
+<Tip>
+  Add a reminder to your monthly review to cross-check each `data.mdx` against live Shopify product data and your current policies.
+</Tip>
+
+## What Happens If You Skip It
+
+If no `data.mdx` exists for the focus product, the loop creates a draft version on its first run using live Shopify product data. The draft is flagged in the run report for your review before use. The loop will not write Q&As or PDP content for that product until you confirm the facts page is accurate.

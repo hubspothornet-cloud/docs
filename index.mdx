@@ -1,20 +1,59 @@
 ---
-title: "Introduction"
-description: "Welcome to your project"
+title: "AEO Growth Loop: AI Visibility for Your Shopify Store"
+sidebarTitle: "Home"
+description: "Grow your store's Share of Model with a daily AI agent loop that optimizes product pages, structured data, and your Knowledge Base."
 ---
 
-Write a short description of your product here. What it does, who it's for, and what they can accomplish with it.
+Welcome to the AEO Growth Loop — a hands-off daily agent that runs autonomously inside Claude to grow your store's Share of Model: how often AI shopping assistants like ChatGPT, Copilot, Gemini, and Perplexity recommend and correctly describe your products. Each day the loop touches four key assets — product pages, structured data, your Shopify Knowledge Base, and your Mintlify docs site — and every change it makes is fully reversible.
 
-<Tip>
-  Ready to make this your own? Start by editing this page. Update your `docs.json` file to customize your site. Then fill out the [Quickstart](/quickstart) page.
-</Tip>
+<CardGroup cols={2}>
+  <Card title="How It Works" icon="rotate" href="/how-it-works">
+    See how the loop selects a product each day and optimizes all four AI-visibility assets.
+  </Card>
+  <Card title="Prerequisites" icon="list-check" href="/prerequisites">
+    Check what you need before starting: Shopify store, Claude, GitHub, and 30–60 minutes.
+  </Card>
+  <Card title="Setup Guide" icon="wrench" href="/setup/shopify-connection">
+    Step-by-step: connect Shopify to Claude, set up your docs site, and schedule the loop.
+  </Card>
+  <Card title="Template Variables" icon="sliders" href="/reference/template-variables">
+    Complete reference for every placeholder in the AEO Growth Loop template.
+  </Card>
+</CardGroup>
 
-<Card title="Quickstart" icon="rocket" href="/quickstart">
-  This card links to the quickstart page in your project.
-</Card>
-<Card title="Components" icon="puzzle-piece" href="https://mintlify.com/docs/components">
-  Add cards, callouts, steps, tabs, and more to design and structure your pages.
-</Card>
-<Card title="Settings" icon="gear" href="https://mintlify.com/docs/organize/settings">
-  Set your site name, branding, and navigation in the `docs.json` file.
-</Card>
+## What the Loop Does
+
+Each day the loop runs through a five-step lifecycle, automatically selecting the highest-opportunity product and updating every asset that AI shopping agents read when forming a recommendation.
+
+<Steps>
+  <Step title="Read Analytics">
+    Claude queries Shopify analytics to pick today's focus product based on traffic and opportunity.
+  </Step>
+  <Step title="Write Knowledge Base Q&As">
+    Generates 20–30 qa-pair metaobjects that feed Shopify Agentic Storefronts and go live instantly.
+  </Step>
+  <Step title="Optimize the Product Page">
+    Rewrites the PDP answer block between AEO markers and updates structured data (JSON-LD).
+  </Step>
+  <Step title="Draft Docs Articles">
+    Writes 2–4 new comparison or buyer-guide MDX pages and refreshes 2–3 existing ones.
+  </Step>
+  <Step title="QA & Report">
+    Checks all output for consistency, then leaves a run report for your review.
+  </Step>
+</Steps>
+
+<Note>
+  The loop never touches your theme, never runs git, and every live write is reversible. Docs changes are left as uncommitted files for you to review before pushing.
+</Note>
+
+## Ready to get started?
+
+<CardGroup cols={2}>
+  <Card title="Connect Shopify" icon="shopify" href="/setup/shopify-connection">
+    Link your Shopify store to Claude using the official connector.
+  </Card>
+  <Card title="Core Concepts" icon="lightbulb" href="/concepts/share-of-model">
+    Understand Share of Model and why it's the metric that matters.
+  </Card>
+</CardGroup>

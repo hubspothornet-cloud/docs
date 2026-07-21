@@ -1,0 +1,84 @@
+---
+title: "Connect Your Shopify Store to Claude"
+sidebarTitle: "Shopify Connection"
+description: "Install the Shopify connector in Claude to give the loop access to analytics, product data, metafields, and metaobjects via the Shopify Admin API."
+---
+
+The AEO Growth Loop drives all Shopify reads and writes through the official Shopify connector — an MCP server built into the Claude desktop app. This gives Claude secure, scoped access to your store's analytics, products, metafields, and metaobjects without requiring a custom app.
+
+## Connect the Shopify Connector
+
+<Steps>
+  <Step title="Open Settings → Connectors">
+    Open the Claude desktop app and go to **Settings → Connectors** (or browse the connectors directory).
+  </Step>
+  <Step title="Find and connect Shopify">
+    Find **Shopify** in the list and click **Connect**.
+  </Step>
+  <Step title="Authenticate">
+    Authenticate with the Shopify account that owns your store and approve the requested access.
+  </Step>
+  <Step title="Select your store">
+    If you have multiple stores, select the correct one from the store switcher.
+  </Step>
+  <Step title="Verify the connection">
+    Start a new chat and ask Claude:
+
+    ```text
+    Use the Shopify connector to run get-shop-info.
+    ```
+
+    You should see your store name and domain in the response.
+  </Step>
+</Steps>
+
+## What the Connector Can Access
+
+The connector provides the following tools used by the loop:
+
+| Tool | What it does |
+|------|-------------|
+| `run-analytics-query` | Runs ShopifyQL queries to read traffic and conversion data |
+| `graphql_query` | Reads product data, metafields, and metaobjects |
+| `graphql_mutation` | Writes metafields (`aeo.*` namespace), creates/updates `qa-pair` metaobjects, and updates product `descriptionHtml` |
+| Product read/update tools | Handles structured PDP changes |
+
+<Note>
+  One thing the API can't see: Shopify's true Agentic Storefronts revenue panel is not exposed via the API or ShopifyQL. The loop reports referrer-based AI numbers as a lower bound — you'll need to read the real figure in **Shopify Admin → Agentic Storefronts** yourself.
+</Note>
+
+## Fallback: Custom App Token
+
+If the official connector isn't available in your version of Claude, you can configure a community Shopify Admin MCP server with a custom app token instead.
+
+<Steps>
+  <Step title="Open app development settings">
+    In your Shopify Admin, go to **Settings → Apps and sales channels → Develop apps**.
+  </Step>
+  <Step title="Create a new app">
+    Click **Create an app**, give it a name (e.g., "AEO Loop MCP"), and open it.
+  </Step>
+  <Step title="Grant the required scopes">
+    Under **Configuration → Admin API integration**, grant the following scopes:
+
+    ```text
+    read_products
+    write_products
+    read_orders
+    read_metaobjects
+    write_metaobjects
+    read_metaobject_definitions
+    write_metaobject_definitions
+    ```
+  </Step>
+  <Step title="Install the app and copy the token">
+    Click **Install app**, then copy the **Admin API access token** from the API credentials page. Store it somewhere secure — Shopify shows it only once.
+  </Step>
+  <Step title="Configure your MCP server">
+    Pass the token to your community Shopify Admin MCP server according to its configuration instructions.
+  </Step>
+</Steps>
+
+<Warning>
+  Grant only the scopes the loop needs. Never share your Admin API token — anyone who holds it can read and write your store's data.
+</Warning>

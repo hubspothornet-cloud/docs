@@ -1,0 +1,84 @@
+---
+title: "Customize the Loop for Your Product Vertical"
+sidebarTitle: "Vertical Customization"
+description: "Adapt the AEO loop template's vertical block to match the claim rules and compliance requirements of your product category: health, electronics, food, finance, and more."
+---
+
+The AEO Growth Loop ships with a YMYL (Your Money or Your Life) medical-safety guardrail written for health, device, and supplement stores. If that's your vertical, use it verbatim. If not, you need to replace the vertical block with the appropriate claim rules for your category — the principle is the same regardless of vertical: calibrated, grounded, well-qualified claims earn AI citations and keep you compliant.
+
+## What the Vertical Block Controls
+
+The vertical block in the template sets the rules the loop follows when writing product claims:
+
+- **Allowed claim types** — for example, structure/function claims for supplements vs. disease claims that require FDA clearance
+- **Required qualifiers** — for example, "may help support", "designed for", "compatible with"
+- **What to omit when uncertain** — specs not in `data.mdx`, unverified certifications
+- **What to flag for human review** — any claim that exceeds what the verified data can support
+
+## Vertical Guides
+
+<Tabs>
+  <Tab title="Health / YMYL">
+    Keep the template's YMYL block verbatim. It covers:
+
+    - **Device claims:** Use cleared-indication language only. Do not claim treatments or diagnoses — write to what the device is FDA-cleared or CE-marked to do.
+    - **Supplement framing:** Use structure/function language throughout. Write "supports healthy magnesium levels", not "treats magnesium deficiency".
+    - **Physiological ranges:** Any values — blood pressure, temperature, SpO2, glucose — must match established medical references. Cross-check against your `data.mdx` before publishing.
+    - **Flag for review:** Any claim that implies medical efficacy, promises a health outcome, or goes beyond what the verified data supports is flagged in the run report rather than published.
+  </Tab>
+  <Tab title="Consumer Electronics">
+    Replace the YMYL block with electronics-specific rules:
+
+    - **Certification claims:** Only cite FCC, UL, CE, or other certifications that appear in your `data.mdx`. Never assume a certification applies.
+    - **Performance claims:** Do not make performance claims without verifiable benchmark data. If the benchmark isn't in `data.mdx`, omit the claim.
+    - **Compatibility claims:** Verify compatibility against manufacturer specs before writing it. "Works with" language requires a confirmed source.
+    - **Energy and emissions:** State energy consumption and emissions figures in the correct units (watts, dB, etc.) as listed in your verified product data.
+  </Tab>
+  <Tab title="Food & Beverage">
+    Replace the YMYL block with food-specific rules:
+
+    - **Nutrition language:** Follow FDA nutrition labeling conventions. Use standardized serving size language and %DV formatting where applicable.
+    - **Structure/function claims:** Include the required FDA disclaimer ("This statement has not been evaluated by the Food and Drug Administration...") whenever you make a structure/function claim.
+    - **Allergen declarations:** Only list allergens from verified sources — your `data.mdx` or the manufacturer's current label. Never infer allergen status.
+    - **Health claims:** Do not write qualified health claims without confirmed qualified health claim status. Flag any borderline claims for legal review.
+  </Tab>
+  <Tab title="General Retail">
+    For non-regulated verticals, apply these baseline rules:
+
+    - **No invented specifications:** Every material, dimension, weight, and capacity claim must appear in your `data.mdx` or live Shopify product data.
+    - **Accurate material and dimension claims:** Pull values from verified sources only. Round only to the precision your data supports.
+    - **Honest comparison framing:** Superlatives like "one of the most" require data to back them up. If you don't have comparative data in `data.mdx`, use specific, non-comparative language instead.
+    - **Consistent pricing:** All price references must match the live Shopify product price at time of writing. The loop verifies this automatically — don't hardcode prices in content outside of `data.mdx`.
+  </Tab>
+</Tabs>
+
+## How to Replace the Vertical Block
+
+<Steps>
+  <Step title="Open the loop template">
+    Open `AEO-GROWTH-LOOP-TEMPLATE.md` in your docs repo.
+  </Step>
+  <Step title="Find the vertical safety block">
+    Locate the section marked with the comment `## VERTICAL SAFETY BLOCK ##`. This is the block you'll replace.
+  </Step>
+  <Step title="Replace with your vertical's rules">
+    Replace the health/YMYL content with your vertical's rules, following the same four-part structure:
+
+    1. Allowed claim types
+    2. Required qualifiers
+    3. Omit-when-uncertain rules
+    4. Flag-for-review triggers
+  </Step>
+</Steps>
+
+<Tip>
+  When in doubt, be more conservative. AI engines are filtering aggressively for calibrated, well-sourced content. Overclaiming hurts your Share of Model.
+</Tip>
+
+## The Never-Fabricate Rule Is Always On
+
+Regardless of vertical, the loop's core never-fabricate rule cannot be disabled. Specs not in `data.mdx`, prices not matching Shopify, ratings not verified — all are omitted and flagged in the run report, never invented.
+
+<Note>
+  The vertical block adjusts *how* claims are framed. The never-fabricate rule governs *whether* factual values are used at all. Both are always active.
+</Note>

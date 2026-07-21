@@ -1,0 +1,57 @@
+---
+title: "Connect Your Docs Folder in Claude Desktop"
+sidebarTitle: "Claude Folder"
+description: "Add your local Mintlify repo as a connected folder in Claude so the loop can write MDX files directly to your working tree."
+---
+
+The AEO Growth Loop writes docs articles directly to your local Mintlify repo by accessing it as a connected folder in the Claude desktop app. Changes appear as uncommitted files — you review them in GitHub Desktop (or your git client), then commit and push to deploy.
+
+## Add the Folder
+
+<Steps>
+  <Step title="Open the Claude desktop app">
+    Open the **Claude desktop app** on your machine.
+  </Step>
+  <Step title="Start or open a Cowork session">
+    Start or open a **Cowork session** from the sidebar.
+  </Step>
+  <Step title="Connect your docs folder">
+    Click **Add folder** and navigate to your local Mintlify repo directory (the one you cloned in the [Docs Site Setup](/setup/mintlify-docs-site) step).
+  </Step>
+  <Step title="Confirm the folder is connected">
+    Confirm the folder is connected — you'll see it listed in the session context panel.
+  </Step>
+  <Step title="Note the absolute path">
+    Note the absolute path (e.g., `/Users/you/Documents/GitHub/my-docs`). This is your `{{DOCS_REPO_PATH}}` placeholder in the loop template.
+  </Step>
+</Steps>
+
+## Important: Keep the App Open
+
+The Claude desktop app must be running when the scheduled task fires for the loop to access the connected folder.
+
+<Note>
+  If the app isn't open when the scheduled task fires, the loop will still complete all Shopify-side work — Knowledge Base Q&As, PDP updates, and schema metafields — and skip the docs step, flagging it in the run report. For full runs, leave the app running.
+</Note>
+
+If your scheduled task fires early in the morning, the simplest approach is to leave the app running overnight. It uses minimal resources when idle.
+
+## Reviewing Docs Changes
+
+After each run, reviewing the loop's docs output takes about five minutes:
+
+<Steps>
+  <Step title="Open GitHub Desktop">
+    Open **GitHub Desktop** (or your preferred git client). You'll see new or modified MDX files listed as uncommitted changes.
+  </Step>
+  <Step title="Review each file">
+    Open each changed file and check that the facts match your `data.mdx` product facts pages. Look especially at prices, specs, ratings, and policy language.
+  </Step>
+  <Step title="Commit and push">
+    Commit the changes with a brief message (e.g., `loop run 2025-07-14`) and push. Mintlify auto-deploys on every push — your updated articles are live within seconds.
+  </Step>
+</Steps>
+
+<Tip>
+  A 5-minute daily habit: scan the run report, review the MDX diffs, commit. That's your entire day's maintenance for the AEO Growth Loop.
+</Tip>

@@ -1,0 +1,52 @@
+---
+title: "Shopify API Scopes Required by the AEO Loop"
+sidebarTitle: "API Scopes"
+description: "The Shopify connector and custom-app fallback require specific Admin API access scopes for analytics, product updates, metafields, and metaobjects."
+---
+
+The AEO Growth Loop accesses your Shopify store through the official Shopify connector in Claude. If you're using the connector, scopes are handled automatically. If you're using the custom-app fallback, you need to grant specific scopes when creating your app.
+
+## Required Scopes
+
+| Scope | Required For |
+|---|---|
+| `read_products` | Reading product data, descriptions, metafields |
+| `write_products` | Updating `descriptionHtml`, `aeo.*` metafields |
+| `read_orders` | Analytics queries via ShopifyQL |
+| `read_analytics` | `run-analytics-query` for focus product selection |
+| `read_metaobjects` | Reading existing `qa-pair` metaobjects |
+| `write_metaobjects` | Creating new Knowledge Base `qa-pair` entries |
+| `read_metaobject_definitions` | Verifying `qa-pair` metaobject type exists |
+
+## Official Connector vs. Custom App
+
+<Tabs>
+  <Tab title="Official Connector">
+    Connect via **Claude Settings → Connectors → Shopify**. Scopes are pre-configured and you grant access during the OAuth flow. No custom app needed.
+
+    This is the recommended path for most stores. The connector stays in sync with Shopify's API versioning automatically, and you don't need to manage access tokens manually.
+  </Tab>
+  <Tab title="Custom App Fallback">
+    Use this only if the official connector isn't available in your region or Claude plan.
+
+    1. Go to **Shopify Admin → Settings → Apps and sales channels → Develop apps**.
+    2. Click **Create an app** and give it a name (e.g., `AEO Growth Loop`).
+    3. Under **Configuration**, click **Configure Admin API scopes**.
+    4. Enable every scope listed in the [Required Scopes](#required-scopes) table above.
+    5. Click **Install app**, then copy the **Admin API access token**.
+    6. Configure your MCP server with that token.
+
+    Store the token in your environment — never commit it to your docs repo or template file.
+  </Tab>
+</Tabs>
+
+<Warning>
+  Grant only the scopes the loop needs. Avoid `write_themes` — the loop explicitly never touches themes, and this scope creates unnecessary risk.
+</Warning>
+
+## What the Connector Can't See
+
+Not all Shopify data is accessible via the Admin API, and the loop is designed around these limitations:
+
+- **Agentic Storefronts revenue panel** — This panel is not accessible via the Shopify Admin API or ShopifyQL. You must check it manually in **Shopify Admin → Agentic Storefronts**. The loop's daily report will include a reminder to do so.
+- **AI-attributed sessions and Agentic Storefronts click-through data** — These analytics dimensions are only available in the Shopify dashboard, not via API. The loop uses referrer-based AI traffic numbers from ShopifyQL as a lower-bound proxy instead.

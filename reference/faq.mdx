@@ -1,0 +1,86 @@
+---
+title: "AEO Growth Loop Frequently Asked Questions"
+sidebarTitle: "FAQ"
+description: "Answers to common questions about the AEO Growth Loop: supervision requirements, run scheduling, conflict handling, success measurement, and more."
+---
+
+These are the most common questions about setting up and running the AEO Growth Loop. For setup-specific questions, see the [Setup guide](/setup/shopify-connection).
+
+<AccordionGroup>
+  <Accordion title="Does the loop need supervision?">
+    It's designed not to. The blast radius of any single run is scoped and reversible:
+
+    - **New KB entries** — reversible by deleting the metaobjects.
+    - **PDP answer block** — reversible by restoring the pre-run backup of `descriptionHtml`.
+    - **`aeo.*` metafield updates** — reversible by restoring the pre-run backup.
+    - **Staged schema files** — not live until you install them.
+    - **Uncommitted MDX docs** — not live until you push to your docs repo.
+
+    Every write that touches live content is preceded by a backup, and every output that touches your site is either gated on your action or scoped to a reversible store object.
+  </Accordion>
+
+  <Accordion title="What if a run overlaps a day I edited the same product?">
+    The loop backs up the full `descriptionHtml` and all `aeo.*` metafields before every write. It only writes between its own `<!-- AEO:START -->` and `<!-- AEO:END -->` markers. Your edits outside those markers — images, tabs, custom sections — are never touched.
+
+    If you edited content inside the markers, the backup lets you restore your version. The safest habit is to keep your manual edits outside the marker block so they're always preserved automatically.
+  </Accordion>
+
+  <Accordion title="Can I run it weekly instead of daily?">
+    Yes — change the scheduled task frequency and optionally expand the scope per run (for example, focus on 2 products instead of 1).
+
+    Daily runs compound more smoothly, keep analytics attribution cleaner, and keep each individual run small enough to review in minutes. Weekly runs are a valid alternative if you prefer a less frequent cadence. Both approaches work; the difference is speed of compounding.
+  </Accordion>
+
+  <Accordion title="How do I measure success?">
+    Watch three data points:
+
+    1. **Agentic Storefronts panel** (Shopify Admin) — this is the ground truth. It shows actual revenue attributed to AI-agent interactions.
+    2. **AI-referrer trend** in the loop's daily report — a lower bound, but its growth rate over time is a reliable KPI for directional progress.
+    3. **New-customer share** for loop-focused products — a rising new-customer percentage indicates improving discovery via AI agents rather than repeat purchases from existing customers.
+
+    See the full [Measuring Success guide](/guides/measuring-success) for how to read each signal and what growth looks like at different stages.
+  </Accordion>
+
+  <Accordion title="The loop can't find my Agentic Storefronts data — is something broken?">
+    No — this is expected. Shopify's Agentic Storefronts revenue panel is not exposed via the Admin API or ShopifyQL. The loop reports referrer-based AI traffic numbers as a lower bound and includes a reminder in the run report to check the panel manually.
+
+    Go to **Shopify Admin → Agentic Storefronts** to see the authoritative revenue figure.
+  </Accordion>
+
+  <Accordion title="What happens if the loop writes a wrong fact?">
+    The loop's never-fabricate rule means it will omit and flag values it can't verify rather than guessing. If something wrong did make it into content, it means the value was incorrect in your `data.mdx` or in the live Shopify product data.
+
+    Fix the source — update `data.mdx` and/or the Shopify product — and the next run that focuses on that product will correct the downstream content automatically.
+  </Accordion>
+
+  <Accordion title="How do I add a new product to the rotation?">
+    You have two options:
+
+    - **Add to Friday rotation** — Append the product's Shopify handle to the `{{ROTATING_PRODUCTS}}` list in your template.
+    - **Replace a core slot** — Swap out one of `{{CORE_PRODUCT_MON}}` through `{{CORE_PRODUCT_THU}}` with the new handle.
+
+    Either way, create a `data.mdx` product facts page for the new product before the next run that focuses on it — otherwise the loop will flag missing facts rather than fabricating them. See [Product Facts Pages](/guides/product-facts-pages).
+  </Accordion>
+
+  <Accordion title="Can I use this for a non-Shopify store?">
+    The current template is built specifically around Shopify's connector, metaobject system, and Agentic Storefronts. The docs-site optimization and structured-data concepts apply to any e-commerce platform, but the Knowledge Base Q&A automation and PDP update workflow require a Shopify store.
+
+    Support for other platforms isn't on the current roadmap.
+  </Accordion>
+
+  <Accordion title="How long until I see results?">
+    Each layer of the loop indexes on a different timeline:
+
+    - **Shopify Knowledge Base Q&As** — go live immediately and typically show impact within **1–2 weeks** as AI agents begin indexing them.
+    - **PDP and schema changes** — typically take **2–4 weeks** to propagate through AI engine indexes.
+    - **Docs articles** — can take **4–8 weeks** to be discovered and cited by AI agents.
+
+    Most stores see measurable agentic traffic growth within **4–6 weeks** of consistent daily runs. Earlier runs compound into later ones, so starting and staying consistent matters more than optimizing any single run.
+  </Accordion>
+
+  <Accordion title="What do I do if the Claude desktop app is closed when the task fires?">
+    The loop handles this gracefully. It completes all Shopify-side work — Knowledge Base Q&As, PDP updates, metafield writes — and skips the docs folder step, flagging it in the run report.
+
+    For full runs that include docs file writes, keep the Claude desktop app running when the scheduled task fires. If you miss the docs step on a given day, you can trigger it manually on the next run without any data loss.
+  </Accordion>
+</AccordionGroup>

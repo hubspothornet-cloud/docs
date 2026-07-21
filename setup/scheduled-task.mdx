@@ -1,0 +1,70 @@
+---
+title: "Create the Daily Scheduled Task in Claude"
+sidebarTitle: "Scheduled Task"
+description: "Schedule the AEO loop to run automatically every day in Claude by pasting the filled-in template prompt into a daily scheduled task."
+---
+
+Once you've filled in the template, the final setup step is creating a daily scheduled task in Claude. Each firing starts a fresh Claude session with your fully self-contained prompt — no session history or context carryover required.
+
+## Create the Task
+
+<Steps>
+  <Step title="Open a Cowork session with everything connected">
+    Open the Claude desktop app and start a **Cowork session** with your docs folder connected and the Shopify connector active. Confirm both are visible in the session context before continuing.
+  </Step>
+  <Step title="Ask Claude to create a daily scheduled task">
+    Ask Claude:
+
+    ```text
+    Create a daily scheduled task that runs the following prompt every day at 6am:
+    ```
+
+    Then paste the entire filled-in PROMPT section from your `AEO-GROWTH-LOOP-TEMPLATE.md` on the next line. Make sure you paste the full prompt — not just the VARIABLES table.
+  </Step>
+  <Step title="Confirm the schedule">
+    Confirm the schedule Claude reports back. Verify it shows the correct time and frequency (daily, at the time you specified).
+  </Step>
+  <Step title="(Recommended) Run it manually first">
+    Before relying on the schedule, paste the prompt into a normal chat session and watch a full run complete. This lets you catch any placeholder errors or connector issues before the first automated firing.
+  </Step>
+</Steps>
+
+## What a Full Run Looks Like
+
+A complete loop run takes **15–30 minutes** depending on your catalog size and the number of Q&As being written.
+
+At the end of each run, Claude leaves a **run report** summarizing:
+
+- Focus product chosen for the day
+- Knowledge Base Q&As written (count and topics covered)
+- PDP changes made (which fields, which products)
+- Schema metafields updated in the `aeo.*` namespace
+- Docs articles created or refreshed
+- Any values flagged for your review (facts the loop couldn't verify, placeholder gaps, connector issues)
+
+<Note>
+  Each scheduled run starts a fresh session. The prompt is written to be fully self-contained — it doesn't rely on any prior conversation context, so runs are independent of each other even if one fails.
+</Note>
+
+## Keeping the Loop Healthy
+
+The loop runs itself, but a small amount of daily and weekly oversight keeps it producing high-quality output.
+
+<CardGroup cols={2}>
+  <Card title="Daily (5 minutes)" icon="calendar-day">
+    Scan the run report, review the MDX diffs in GitHub Desktop, and commit the ones that look good. Flag any fabrication warnings in the report for manual correction.
+  </Card>
+  <Card title="Weekly (10 minutes)" icon="calendar-week">
+    Check the Agentic Storefronts panel in Shopify Admin for true agentic revenue. Compare against the loop's referrer-based estimate to calibrate your expectations.
+  </Card>
+</CardGroup>
+
+A few operational habits that prevent the most common issues:
+
+- **Keep the Claude desktop app running** — especially overnight if your task fires in the early morning.
+- **Don't rename product folders** in your docs repo without updating `{{ROTATING_PRODUCTS}}` and the core product placeholders in the template.
+- **Update `data.mdx` when product details change** — new price, updated rating, revised return policy. The loop grounds itself in these files, so stale facts produce stale output.
+
+<Tip>
+  Set a calendar reminder to check the Agentic Storefronts panel every Monday. The panel shows data the loop's analytics queries can't see — it's the only place you'll find true agentic revenue numbers.
+</Tip>
