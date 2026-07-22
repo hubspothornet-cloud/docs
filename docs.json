@@ -93,6 +93,7 @@
             "group": "Verified Product Facts",
             "icon": "clipboard-list",
             "pages": [
+              "kayak/data/hornet-kayak-paddle-shared-specs",
               "kayak/data/hornet-kayak-paddle-making-waves",
               "kayak/data/hornet-kayak-paddle-blue-scales",
               "kayak/data/hornet-kayak-paddle-crush",
