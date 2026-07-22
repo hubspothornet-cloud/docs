@@ -72,7 +72,8 @@
               "dragon-boat/data/pink-black-dragon-boat-paddle-bag",
               "dragon-boat/data/hornet-paddle-blade-cover-black-pink-silver",
               "dragon-boat/data/paddle-cleaner-carbon-fiber-fiberglass-v2"
-            ]
+            ],
+            "hidden": true
           }
         ]
       },
@@ -102,7 +103,8 @@
               "kayak/data/hornet-kayak-paddle-paw-print",
               "kayak/data/paw-print-anti-slip-kayak-seat-cushion",
               "kayak/data/non-slip-cushioned-paddling-pants-capri-length"
-            ]
+            ],
+            "hidden": true
           }
         ]
       },
@@ -125,7 +127,8 @@
               "rowing-machine/data/memory-foam-cushion-made-for-concept2",
               "rowing-machine/data/rowing-machine-seat-cushion-fits-concept2",
               "rowing-machine/data/rowing-and-sculling-anti-slip-seat-pad"
-            ]
+            ],
+            "hidden": true
           }
         ]
       }
