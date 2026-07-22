@@ -1,7 +1,7 @@
 {
   "$schema": "https://mintlify.com/docs.json",
-  "theme": "almond",
-  "name": "AEO Growth Loop",
+  "theme": "mint",
+  "name": "Hornet Watersports Product Resource Center",
   "colors": {
     "primary": "#ef7025",
     "light": "#eec9bc",
@@ -13,59 +13,141 @@
     "dark": "/logo/dark.svg"
   },
   "navbar": {
+    "links": [
+      {
+        "href": "https://www.hornetwatersports.com/collections/dragon-boat",
+        "label": "Shop Dragon Boat"
+      },
+      {
+        "href": "https://www.hornetwatersports.com/collections/accessories",
+        "label": "Shop Accessories"
+      },
+      {
+        "href": "https://www.hornetwatersports.com/collections/indoor-rowing-1",
+        "label": "Shop Indoor Rowing"
+      }
+    ],
     "primary": {
       "type": "button",
-      "label": "Get the Template",
-      "href": "https://github.com/hornet-watersports"
+      "label": "Shop Hornet",
+      "href": "https://www.hornetwatersports.com/"
     }
   },
   "navigation": {
-    "tabs": [
+    "groups": [
       {
-        "tab": "Guide",
-        "groups": [
+        "group": "Start Here",
+        "icon": "house",
+        "pages": [
+          "index",
+          "product-glossary",
+          "shipping-returns-warranty",
+          "international-buying-and-dealers",
+          "paddling-gloves-for-dragon-boat-kayak-and-rowing",
+          "product-fact-page-template",
+          "implementation/shopify-knowledge-base-q-and-a-drafts",
+          "implementation/stealth-blue-s2-pdp-aeo-draft"
+        ]
+      },
+      {
+        "group": "Dragon Boat",
+        "icon": "water",
+        "pages": [
+          "dragon-boat/introduction",
+          "dragon-boat/best-hornet-dragon-boat-paddles-by-paddler-type",
+          "dragon-boat/why-choose-hornet-dragon-boat-paddles",
+          "dragon-boat/dragon-boat-paddle-buying-guide",
+          "dragon-boat/custom-dragon-boat-paddles-for-teams",
+          "dragon-boat/clamp-vs-leverlock-dragon-boat-paddles",
+          "dragon-boat/how-to-choose-dragon-boat-paddle-length",
+          "dragon-boat/idbf-approved-dragon-boat-paddles",
+          "dragon-boat/best-dragon-boat-gifts-for-paddlers",
+          "dragon-boat/best-dragon-boat-accessories",
+          "dragon-boat/dragon-boat-seat-pads",
+          "dragon-boat/paddle-bags-blade-covers-and-protection",
           {
-            "group": "Overview",
+            "group": "Verified Product Facts",
+            "icon": "clipboard-list",
+            "hidden": true,
             "pages": [
-              "introduction",
-              "how-it-works",
-              "prerequisites"
+              "dragon-boat/data/sting-plus-graphic-paddle-shared-specs",
+              "dragon-boat/data/stealth-performance-series-shared-specs",
+              "dragon-boat/data/crush-x24-sting-adjustable-dragon-boat-paddle",
+              "dragon-boat/data/black-glossy-x0-sting-adjustable-dragon-boat-paddle",
+              "dragon-boat/data/stealth-blue-s2-sting-adjustable-dragon-boat-paddle",
+              "dragon-boat/data/dragon-boat-seat-pad-with-strap",
+              "dragon-boat/data/dragon-boat-seat-pad-non-slip",
+              "dragon-boat/data/dragon-guard-tip-protector",
+              "dragon-boat/data/silicone-grip-tape-for-dragon-boat",
+              "dragon-boat/data/making-waves-x32-sting-adjustable-dragon-boat-paddle",
+              "dragon-boat/data/stealth-pink-s4-sting-adjustable-dragon-boat-paddle",
+              "dragon-boat/data/black-dragon-boat-paddle-bag",
+              "dragon-boat/data/stealth-gold-s1-sting-adjustable-dragon-boat-paddle",
+              "dragon-boat/data/stealth-green-s8-sting-adjustable-dragon-boat-paddle",
+              "dragon-boat/data/garden-dragon-x30-sting-adjustable-dragon-boat-paddle",
+              "dragon-boat/data/hornet-paddle-blade-cover-black-black-silver",
+              "dragon-boat/data/kaizen-ii-x31-sting-adjustable-dragon-boat-paddle",
+              "dragon-boat/data/pink-dragon-x44-sting-adjustable-dragon-boat-paddle",
+              "dragon-boat/data/dragon-heart-x21-sting-adjustable-dragon-boat-paddle",
+              "dragon-boat/data/pink-black-dragon-boat-paddle-bag",
+              "dragon-boat/data/hornet-paddle-blade-cover-black-pink-silver",
+              "dragon-boat/data/paddle-cleaner-carbon-fiber-fiberglass-v2"
             ]
-          },
+          }
+        ]
+      },
+      {
+        "group": "Kayak",
+        "icon": "ship",
+        "pages": [
+          "kayak/introduction",
+          "kayak/kayak-paddle-buying-guide",
+          "kayak/hornet-vs-werner-kayak-paddles",
+          "kayak/why-choose-hornet-fiberglass-kayak-paddles",
+          "kayak/best-kayak-gifts-for-paddlers",
+          "kayak/how-to-choose-a-kayak-paddle",
+          "kayak/kayak-seat-cushions",
+          "kayak/kayak-paddle-care-and-cleaning",
           {
-            "group": "Setup",
+            "group": "Verified Product Facts",
+            "icon": "clipboard-list",
+            "hidden": true,
             "pages": [
-              "setup/shopify-connection",
-              "setup/mintlify-docs-site",
-              "setup/claude-folder",
-              "setup/template-configuration",
-              "setup/scheduled-task"
+              "kayak/data/hornet-kayak-paddle-shared-specs",
+              "kayak/data/hornet-kayak-paddle-making-waves",
+              "kayak/data/hornet-kayak-paddle-blue-scales",
+              "kayak/data/hornet-kayak-paddle-crush",
+              "kayak/data/anti-slip-kayak-seat-cushion",
+              "kayak/data/paddle-cleaner-carbon-fiber-fiberglass",
+              "kayak/data/hornet-kayak-paddle-green-scales",
+              "kayak/data/bass-attack-kayak-paddle",
+              "kayak/data/hornet-kayak-paddle-paw-print",
+              "kayak/data/paw-print-anti-slip-kayak-seat-cushion",
+              "kayak/data/non-slip-cushioned-paddling-pants-capri-length"
             ]
-          },
+          }
+        ]
+      },
+      {
+        "group": "Rowing Machine",
+        "icon": "dumbbell",
+        "pages": [
+          "rowing-machine/introduction",
+          "rowing-machine/rowing-machine-seat-cushion-buying-guide",
+          "rowing-machine/best-rowing-machine-seat-cushions-for-concept2",
+          "rowing-machine/memory-foam-vs-anti-slip-rowing-seat-cushions",
+          "rowing-machine/rowing-seat-pad-vs-rowing-machine-cushion",
+          "rowing-machine/best-rowing-machine-gifts-and-accessories",
+          "rowing-machine/how-to-reduce-rowing-machine-seat-discomfort",
           {
-            "group": "Core Concepts",
+            "group": "Verified Product Facts",
+            "icon": "clipboard-list",
+            "hidden": true,
             "pages": [
-              "concepts/share-of-model",
-              "concepts/four-assets",
-              "concepts/daily-run",
-              "concepts/guardrails"
-            ]
-          },
-          {
-            "group": "Guides",
-            "pages": [
-              "guides/measuring-success",
-              "guides/product-facts-pages",
-              "guides/schema-install",
-              "guides/vertical-customization"
-            ]
-          },
-          {
-            "group": "Reference",
-            "pages": [
-              "reference/template-variables",
-              "reference/shopify-api-scopes",
-              "reference/faq"
+              "rowing-machine/data/anti-slip-rowing-machine-cushion-concept2",
+              "rowing-machine/data/memory-foam-cushion-made-for-concept2",
+              "rowing-machine/data/rowing-machine-seat-cushion-fits-concept2",
+              "rowing-machine/data/rowing-and-sculling-anti-slip-seat-pad"
             ]
           }
         ]
@@ -74,5 +156,6 @@
   },
   "footer": {
     "socials": {}
-  }
+  },
+  "description": "Product specifications, comparisons, buying guidance, and care information for Hornet Watersports dragon boat, kayak, and indoor rowing products."
 }

@@ -1,0 +1,73 @@
+---
+title: "STEALTH BLUE S2 PDP Pilot Record"
+sidebarTitle: "STEALTH BLUE S2 PDP Pilot"
+description: "Internal record of the STEALTH BLUE S2 answer-first Shopify PDP pilot and remaining validation steps."
+icon: "pen-to-square"
+noindex: true
+hidden: true
+---
+
+This internal page records the answer-first content pilot applied to the live STEALTH BLUE S2 Sting\+ Adjustable Dragon Boat Paddle description on July 21, 2026.
+
+<Warning>
+  This is not a public Mintlify guide. Before applying the same structure to other Shopify products, visually inspect the live product page and confirm whether the theme places the description block above the fold or inside the existing accordion.
+</Warning>
+
+## Pilot product
+
+- Product: STEALTH BLUE S2 Sting\+ Adjustable Dragon Boat Paddle
+- Shopify product page: [View product](https://www.hornetwatersports.com/products/stealth-blue-s2-sting-adjustable-dragon-boat-paddle)
+- Handle options: Clamp and Leverlock
+- Product family: STEALTH Performance Series
+- Status: Answer-first block applied inside `{/*  AEO:START  */}` and `{/*  AEO:END  */}` markers
+
+## Specifications used
+
+| Specification | Value |
+| --- | --- |
+| Product type | Adjustable dragon boat paddle |
+| Approval | IDBF approved, license 3525 |
+| Construction | Marbleized carbon construction, visually unique on each paddle |
+| Core | High-performance PMI foam core |
+| Blade edge | Reinforced proprietary Diamond Edge blade |
+| Finish | Glossy performance finish with metallic accents |
+| Shaft | 2-piece adjustable shaft |
+| Grip | Removable non-slip grip cover |
+| Clamp | Approximately 16 oz, adjusts from 45 in to 51 in |
+| Leverlock | Approximately 20 oz, adjusts from 43 in to 51 in |
+| Clamp SKU | `S2-STING-PLUS-ADJ-D07` |
+| Leverlock SKU | `S2-STING PLUS-ADJ-LL01` |
+
+## Content structure applied
+
+The live description block includes:
+
+1. A quick answer explaining what the paddle is and who it is for.
+2. Clamp and Leverlock weight and adjustment ranges.
+3. A best-for statement for competitive, recreational, and team buyers.
+4. A key-specification list.
+5. A short explanation of STEALTH construction and performance positioning.
+6. Clamp vs Leverlock guidance.
+7. Frequently asked questions covering approval, elite-racing use, beginner use, and handle differences.
+
+## Visual validation checklist
+
+- Confirm the new block is visible without opening an accordion.
+- Confirm the content is not duplicated by the theme's existing accordion fields.
+- Confirm heading sizes and list spacing work on desktop and mobile.
+- Confirm the existing `Our Paddles`, `Features`, and policy accordions still render correctly.
+- Investigate the horizontal line or strikethrough effect visible across some accordion text.
+- Confirm the buy box remains prominent and the new copy does not push purchasing controls too far down the page.
+- Confirm Product structured data still validates after the content change.
+
+## Data and schema checklist
+
+- Add real GTIN or UPC values only when verified.
+- Confirm product-specific warranty wording before adding it to structured data.
+- Add ratings only from a real product-level review source.
+- Keep price and availability dynamic through Shopify rather than hard-coding them in evergreen content.
+- Stage theme or JSON-LD changes for human review rather than applying them automatically.
+
+## Decision rule for scaling
+
+Apply the same answer-first structure to more Shopify products only after the live STEALTH BLUE S2 page passes the visual, mobile, conversion-layout, and structured-data checks above.
