@@ -1,7 +1,7 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Hornet Watersports Guides",
+  "name": "Hornet Watersports Product Resource Center",
   "colors": {
     "primary": "#16A34A",
     "light": "#07C983",
@@ -176,5 +176,5 @@
     "socials": {
     }
   },
-  "description": "Buyer guides for Hornet Watersports dragon boat, kayak, and rowing machine products."
+  "description": "Product specifications, comparisons, buying guidance, and care information for Hornet Watersports dragon boat, kayak, and indoor rowing products."
 }

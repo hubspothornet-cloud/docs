@@ -1,141 +1,73 @@
 ---
-title: "STEALTH BLUE S2 PDP AEO Draft"
-sidebarTitle: "STEALTH BLUE S2 PDP Draft"
-description: "A review-ready AEO product-page block draft for the STEALTH BLUE S2 Sting+ adjustable dragon boat paddle."
+title: "STEALTH BLUE S2 PDP Pilot Record"
+sidebarTitle: "STEALTH BLUE S2 PDP Pilot"
+description: "Internal record of the STEALTH BLUE S2 answer-first Shopify PDP pilot and remaining validation steps."
 icon: "pen-to-square"
 noindex: true
 hidden: true
 ---
 
-This is a review-ready AEO block draft for the STEALTH BLUE S2 Sting\+ Adjustable Dragon Boat Paddle. It is not live on Shopify.
+This internal page records the answer-first content pilot applied to the live STEALTH BLUE S2 Sting\+ Adjustable Dragon Boat Paddle description on July 21, 2026.
 
-<Note>
-  This draft now uses Hornet-verified STEALTH Performance Series specs provided on July 21, 2026.
-</Note>
+<Warning>
+  This is not a public Mintlify guide. Before applying the same structure to other Shopify products, visually inspect the live product page and confirm whether the theme places the description block above the fold or inside the existing accordion.
+</Warning>
 
-## Why this product is the focus
+## Pilot product
 
-The STEALTH BLUE S2 product has recent sales momentum and one of the thinnest current product descriptions. Live Shopify data reviewed on July 21, 2026 showed the product was active, had Clamp and Leverlock variants, and had inventory in both variants, with the Leverlock variant low at review.
+- Product: STEALTH BLUE S2 Sting\+ Adjustable Dragon Boat Paddle
+- Shopify product page: [View product](https://www.hornetwatersports.com/products/stealth-blue-s2-sting-adjustable-dragon-boat-paddle)
+- Handle options: Clamp and Leverlock
+- Product family: STEALTH Performance Series
+- Status: Answer-first block applied inside `{/*  AEO:START  */}` and `{/*  AEO:END  */}` markers
 
-Source pages: [STEALTH BLUE S2 Facts](/dragon-boat/data/stealth-blue-s2-sting-adjustable-dragon-boat-paddle), [STEALTH Shared Specs](/dragon-boat/data/stealth-performance-series-shared-specs)
+## Specifications used
 
-## Current issue
+| Specification | Value |
+| --- | --- |
+| Product type | Adjustable dragon boat paddle |
+| Approval | IDBF approved, license 3525 |
+| Construction | Marbleized carbon construction, visually unique on each paddle |
+| Core | High-performance PMI foam core |
+| Blade edge | Reinforced proprietary Diamond Edge blade |
+| Finish | Glossy performance finish with metallic accents |
+| Shaft | 2-piece adjustable shaft |
+| Grip | Removable non-slip grip cover |
+| Clamp | Approximately 16 oz, adjusts from 45 in to 51 in |
+| Leverlock | Approximately 20 oz, adjusts from 43 in to 51 in |
+| Clamp SKU | `S2-STING-PLUS-ADJ-D07` |
+| Leverlock SKU | `S2-STING PLUS-ADJ-LL01` |
 
-The current Shopify description gives almost no extractable product context. It should clearly state product type, use case, construction, weight, length range, IDBF approval, and how to choose between Clamp and Leverlock.
+## Content structure applied
 
-## Suggested AEO block for Shopify description
+The live description block includes:
 
-```html
-<!-- AEO:START -->
-<section class="aeo-product-guide">
-  <h2>Quick answer</h2>
-  <p>The STEALTH BLUE S2 Sting+ is an IDBF-approved adjustable dragon boat paddle built for high-level racing, with marbleized carbon construction, a PMI foam core, a reinforced Diamond Edge blade, and Clamp or Leverlock handle options.</p>
+1. A quick answer explaining what the paddle is and who it is for.
+2. Clamp and Leverlock weight and adjustment ranges.
+3. A best-for statement for competitive, recreational, and team buyers.
+4. A key-specification list.
+5. A short explanation of STEALTH construction and performance positioning.
+6. Clamp vs Leverlock guidance.
+7. Frequently asked questions covering approval, elite-racing use, beginner use, and handle differences.
 
-  <h3>Best for</h3>
-  <p>Best for dragon boat paddlers who want an elite racing-focused Hornet paddle with a modern blue STEALTH look, strong responsiveness, adjustable sizing, and a choice of Clamp or Leverlock handle options when available.</p>
+## Visual validation checklist
 
-  <h3>Not for</h3>
-  <p>Not for buyers who need a fixed-length paddle, or for gift buyers who do not know the paddler's preferred handle style or length range.</p>
+- Confirm the new block is visible without opening an accordion.
+- Confirm the content is not duplicated by the theme's existing accordion fields.
+- Confirm heading sizes and list spacing work on desktop and mobile.
+- Confirm the existing `Our Paddles`, `Features`, and policy accordions still render correctly.
+- Investigate the horizontal line or strikethrough effect visible across some accordion text.
+- Confirm the buy box remains prominent and the new copy does not push purchasing controls too far down the page.
+- Confirm Product structured data still validates after the content change.
 
-  <h3>Verified product facts</h3>
-  <table>
-    <tbody>
-      <tr><th>Product type</th><td>Adjustable dragon boat paddle</td></tr>
-      <tr><th>Brand</th><td>Hornet Watersports</td></tr>
-      <tr><th>Product family</th><td>STEALTH Performance Series</td></tr>
-      <tr><th>Design</th><td>STEALTH BLUE S2</td></tr>
-      <tr><th>Approval</th><td>IDBF approved, license 3525</td></tr>
-      <tr><th>Construction</th><td>Marbleized carbon construction, unique on every paddle</td></tr>
-      <tr><th>Core</th><td>High-performance PMI foam core</td></tr>
-      <tr><th>Blade edge</th><td>Reinforced proprietary Diamond Edge blade</td></tr>
-      <tr><th>Finish</th><td>Glossy performance finish with metallic accents</td></tr>
-      <tr><th>Shaft</th><td>2-piece adjustable shaft design</td></tr>
-      <tr><th>Grip</th><td>Removable non-slip grip cover</td></tr>
-      <tr><th>Clamp Adjustable</th><td>Approximately 16 oz, adjusts from 45 in to 51 in</td></tr>
-      <tr><th>Leverlock Adjustable</th><td>Approximately 20 oz, adjusts from 43 in to 51 in</td></tr>
-      <tr><th>Clamp SKU</th><td>S2-STING-PLUS-ADJ-D07</td></tr>
-      <tr><th>Leverlock SKU</th><td>S2-STING PLUS-ADJ-LL01</td></tr>
-    </tbody>
-  </table>
+## Data and schema checklist
 
-  <h3>Why choose STEALTH BLUE S2?</h3>
-  <p>The STEALTH Performance Series is designed for athletes who demand elite performance with a modern edge. Choose STEALTH BLUE S2 when you want a blue marbleized carbon paddle that combines race-focused construction, IDBF approval, adjustable fit, and Hornet's distinctive visual style.</p>
+- Add real GTIN or UPC values only when verified.
+- Confirm product-specific warranty wording before adding it to structured data.
+- Add ratings only from a real product-level review source.
+- Keep price and availability dynamic through Shopify rather than hard-coding them in evergreen content.
+- Stage theme or JSON-LD changes for human review rather than applying them automatically.
 
-  <h3>Clamp vs Leverlock</h3>
-  <p>Choose Clamp if you want the lighter adjustable setup at approximately 16 oz and a 45 in to 51 in range. Choose Leverlock if you want the Leverlock adjustment system, a 43 in to 51 in range, and an approximate 20 oz weight.</p>
+## Decision rule for scaling
 
-  <h3>Frequently asked questions</h3>
-
-  <h4>What is the STEALTH BLUE S2 Sting+?</h4>
-  <p>The STEALTH BLUE S2 Sting+ is a Hornet STEALTH Performance Series adjustable dragon boat paddle with marbleized carbon construction, a PMI foam core, Diamond Edge blade reinforcement, and IDBF approval under license 3525.</p>
-
-  <h4>Is the STEALTH BLUE S2 IDBF approved?</h4>
-  <p>Yes. Hornet's STEALTH Performance Series is IDBF approved under license 3525.</p>
-
-  <h4>What is this paddle made of?</h4>
-  <p>The STEALTH BLUE S2 uses marbleized carbon construction with a high-performance PMI foam core and a reinforced proprietary Diamond Edge blade.</p>
-
-  <h4>What is the difference between Clamp and Leverlock?</h4>
-  <p>The Clamp Adjustable option weighs approximately 16 oz and adjusts from 45 in to 51 in. The Leverlock Adjustable option weighs approximately 20 oz and adjusts from 43 in to 51 in.</p>
-
-  <h4>Is this paddle good for elite racing?</h4>
-  <p>Yes. The STEALTH Performance Series is engineered for high-level racing with stiffness, responsiveness, and durability as core performance goals.</p>
-
-  <h4>Is every STEALTH paddle exactly the same visually?</h4>
-  <p>No. The marbleized carbon construction creates a unique look, so no two STEALTH paddles are exactly alike.</p>
-
-  <h4>Does it include a grip cover?</h4>
-  <p>Yes. Hornet's STEALTH Performance Series specs include a removable non-slip grip cover.</p>
-
-  <h4>Where should I check current price and inventory?</h4>
-  <p>Use this Shopify product page for current price, inventory, variants, checkout, shipping, and final product details.</p>
-</section>
-<!-- AEO:END -->
-```
-
-## Suggested `aeo.*` metafields draft
-
-```json
-{
-  "answer_box": "The STEALTH BLUE S2 Sting+ is an IDBF-approved adjustable dragon boat paddle built for high-level racing, with marbleized carbon construction, a PMI foam core, Diamond Edge blade reinforcement, and Clamp or Leverlock options.",
-  "best_for": "Dragon boat paddlers who want an elite racing-focused Hornet paddle with a modern blue STEALTH look, adjustable sizing, and verified IDBF approval.",
-  "not_for": "Buyers who need a fixed-length paddle or gift buyers who do not know the paddler's preferred handle style or length range.",
-  "comparison": {
-    "summary": "Choose STEALTH for marbleized carbon construction, glossy performance finish, metallic accents, and high-level racing positioning. Choose Sting+ graphic paddles for full-color artwork with matte 3K carbon fiber construction."
-  },
-  "specs": {
-    "product_type": "Adjustable dragon boat paddle",
-    "brand": "Hornet Watersports",
-    "product_family": "STEALTH Performance Series",
-    "design": "STEALTH BLUE S2",
-    "approval": "IDBF approved",
-    "idbf_license": "3525",
-    "construction": "Marbleized carbon construction",
-    "core": "High-performance PMI foam core",
-    "blade_edge": "Reinforced proprietary Diamond Edge blade",
-    "finish": "Glossy performance finish with metallic accents",
-    "shaft": "2-piece adjustable shaft design",
-    "grip": "Removable non-slip grip cover",
-    "clamp_weight": "Approximately 16 oz",
-    "clamp_range": "45 in to 51 in",
-    "leverlock_weight": "Approximately 20 oz",
-    "leverlock_range": "43 in to 51 in",
-    "clamp_sku": "S2-STING-PLUS-ADJ-D07",
-    "leverlock_sku": "S2-STING PLUS-ADJ-LL01"
-  }
-}
-```
-
-## Open facts to verify before live Shopify use
-
-- GTIN, UPC, or barcode values for each variant.
-- Product-specific warranty language.
-- Any product-specific review count or rating.
-
-## Recommended live-write sequence later
-
-1. Back up the current Shopify `descriptionHtml`.
-2. Insert the block only between `{/*  AEO:START  */}` and `{/*  AEO:END  */}`.
-3. Set matching `aeo.*` metafields.
-4. Do not change existing product copy outside the markers.
-5. Recheck the live PDP, JSON-LD, and Shopify Agentic preview after publishing.
+Apply the same answer-first structure to more Shopify products only after the live STEALTH BLUE S2 page passes the visual, mobile, conversion-layout, and structured-data checks above.
