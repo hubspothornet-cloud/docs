@@ -1,0 +1,91 @@
+---
+title: "The Four Content Assets the AEO Growth Loop Optimizes"
+sidebarTitle: "Four Assets"
+description: "The AEO loop improves four assets AI agents read: Shopify product pages, JSON-LD structured data, the Shopify Knowledge Base, and a Mintlify docs site."
+---
+
+Each daily run of the AEO Growth Loop improves four types of assets — the specific content formats that AI shopping agents read, parse, and cite when forming recommendations. Understanding what each asset does helps you evaluate the quality of the loop's output.
+
+## 1. Shopify Product Pages (PDPs)
+
+AI agents read product descriptions as prose, not marketing copy. The loop rewrites the description to lead with the answer a buyer needs: what the product does, who it's for, and what makes it distinct.
+
+The rewrite happens inside `<!-- AEO:START -->` and `<!-- AEO:END -->` HTML comment markers. Everything outside those markers — your original content, images, tabs — is never touched.
+
+The answer block follows a consistent structure: a lead paragraph, a spec table, an FAQ section, and (where applicable) a comparison note.
+
+<Note>
+  The loop backs up your full `descriptionHtml` before every write. Any run is reversible.
+</Note>
+
+## 2. Structured Data / Schema
+
+JSON-LD schema is the most direct signal to AI search agents. The loop generates and maintains three schema types:
+
+- **`Product`** — name, description, SKU, GTIN, brand
+- **`Offer`** — price, availability, currency
+- **`FAQPage`** — mirroring the PDP FAQ section
+
+These are stored as `aeo.*` metafields on each product. A Liquid snippet you install once into your theme reads these metafields and injects the JSON-LD into the page `<head>` automatically. Once installed, all future loop runs update the values without any further theme work.
+
+```json
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Magnesium Complex 300mg",
+    "sku": "MAG-300-90",
+    "brand": { "@type": "Brand", "name": "SonoHealth" },
+    "offers": {
+      "@type": "Offer",
+      "price": "29.99",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is Magnesium Complex 300mg used for?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Magnesium Complex 300mg supports muscle relaxation, sleep quality, and healthy nerve function. It combines three bioavailable magnesium forms for optimal absorption."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How many capsules are in one bottle?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Each bottle contains 90 capsules, providing a 90-day supply at the recommended one capsule per day serving."
+        }
+      }
+    ]
+  }
+]
+```
+
+## 3. Shopify Knowledge Base
+
+The Shopify Knowledge Base is powered by `qa-pair` metaobjects. Each metaobject contains a question and answer. Shopify's Agentic Storefronts feature surfaces these directly to AI shopping agents querying your store.
+
+The loop writes 20–30 new Q&As per day for the focus product, based on actual buyer questions derived from analytics, competitor patterns, and product data. Q&As go live instantly — no push or deployment needed.
+
+<Tip>
+  After a few weeks of runs, your Knowledge Base will have hundreds of grounded, well-sourced Q&As. This is the asset with the fastest impact on agentic traffic.
+</Tip>
+
+## 4. Mintlify Docs Site
+
+Long-form comparison and buyer-guide content is the format AI engines cite most often. A well-structured `docs.yourstore.com` filled with honest, detailed articles becomes a trusted source in AI training and retrieval pipelines.
+
+The loop writes 2–4 new MDX articles per run and refreshes 2–3 existing ones. Article types include: product comparisons, buyer guides, use-case explainers, and FAQ compilations.
+
+Changes are left as uncommitted files for you to review before pushing. Mintlify auto-deploys on every push.
+
+<Note>
+  Every article the loop writes is grounded in your `data.mdx` product facts pages. If a spec or claim isn't in the facts page, it's omitted and flagged — never invented.
+</Note>

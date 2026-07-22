@@ -1,0 +1,44 @@
+---
+title: "Share of Model: The AI Visibility Metric for Stores"
+sidebarTitle: "Share of Model"
+description: "Share of Model measures how often AI shopping agents correctly recommend your products — the core growth metric the AEO loop is built to improve."
+---
+
+Share of Model is the percentage of AI-agent shopping interactions in which your products are correctly recommended and described. Unlike a search ranking, it's not a position — it's a measure of how well-represented your products are in the knowledge AI engines use to answer buyer questions.
+
+## Why It Matters Now
+
+AI shopping agents (ChatGPT, Copilot, Gemini, Perplexity) are increasingly the first touchpoint for product discovery. When a shopper asks "what's the best portable nebulizer for home use?", the agent synthesizes information from across the web — product pages, reviews, comparison guides, structured data. Stores whose products are well-documented across all these signals get recommended; stores that aren't, don't — even if their product is objectively better.
+
+## What Drives Share of Model
+
+AI engines weight four signal types most heavily when forming product recommendations:
+
+1. **Q&A coverage** — does your Knowledge Base answer the questions buyers actually ask?
+2. **Structured product data** — is your JSON-LD complete, accurate, and consistent with your page content?
+3. **Answer-first product descriptions** — does your PDP lead with the answer a buyer needs, not marketing copy?
+4. **Long-form buyer guides** — do you have comparison and guide content in a format AI engines cite?
+
+The AEO loop improves all four of these signals daily, compounding your Share of Model over time.
+
+## How to Measure It
+
+<Tabs>
+  <Tab title="Shopify Panel">
+    The most accurate source. In **Shopify Admin → Agentic Storefronts**, you'll see agentic revenue, sessions from AI agents, and which products are being cited. Check this weekly.
+  </Tab>
+  <Tab title="AI Referrer Data">
+    Less accurate but visible in your standard analytics. AI-agent sessions that carry referrer headers show up as traffic from `chatgpt.com`, `bing.com/chat`, and similar domains. Treat this as a lower bound — most agentic traffic doesn't pass referrer headers.
+  </Tab>
+  <Tab title="Loop Run Report">
+    Each daily run includes AI-referrer trend data for the focus product. Use the growth rate of this number as a KPI, not the absolute value.
+  </Tab>
+</Tabs>
+
+<Note>
+  The Agentic Storefronts panel is the only accurate measure of agentic revenue. The loop's referrer data is a directional signal, not a true count.
+</Note>
+
+## What the Loop Does to Improve It
+
+The loop runs daily to compound your Share of Model score by improving all four signal types simultaneously, focusing on one product at a time. Each run writes new Knowledge Base Q&As, rewrites the product description to be answer-first, updates JSON-LD structured data, and drafts long-form buyer-guide content — building a compounding body of grounded, well-structured signals that AI engines can read, parse, and cite.

@@ -1,0 +1,58 @@
+---
+title: "How to Measure AEO Growth Loop Success: Three KPIs"
+sidebarTitle: "Measuring Success"
+description: "Track loop results using three sources: the Agentic Storefronts panel, AI referrer trends (a lower bound), and new-customer share per focus product."
+---
+
+The AEO Growth Loop is designed to compound over time, so success looks different in week 1 vs. week 8. These three metrics tell the full story — and they require data from different places.
+
+## The Three Metrics
+
+<CardGroup cols={3}>
+  <Card title="Agentic Storefronts Panel" icon="chart-line">
+    Shopify's official agentic revenue panel. The only accurate measure of AI-agent sessions and revenue.
+  </Card>
+  <Card title="AI Referrer Trend" icon="arrow-trend-up">
+    Referrer-visible AI traffic in your analytics. A lower bound — treat its growth rate as the KPI, not the absolute value.
+  </Card>
+  <Card title="New-Customer Share" icon="user-plus">
+    For loop-focused products: what % of buyers are new customers? This tracks Share of Model converting to discovery.
+  </Card>
+</CardGroup>
+
+## Metric 1: Agentic Storefronts Panel
+
+**Where to find it:** Shopify Admin → Agentic Storefronts
+
+**What it shows:** AI-agent sessions, revenue attributed to AI agents, and which products are being cited and converted.
+
+**How to use it:** Check weekly. Track the trend for each of your four core products after the loop has made a deep pass on them.
+
+<Warning>
+  This panel is not exposed via the Shopify API or ShopifyQL. The loop cannot read or report from it — you have to check it manually.
+</Warning>
+
+## Metric 2: AI Referrer Trend
+
+The loop's daily run report includes AI-referrer traffic data for the focus product — sessions from chatgpt.com, bing.com/chat, perplexity.ai, and similar sources.
+
+Treat the absolute number as a lower bound — most agentic sessions don't pass referrer headers. Track the *growth rate* of this number week-over-week. A consistent upward trend indicates improving Share of Model.
+
+<Note>
+  A product that goes from 3 AI-referrer sessions/week to 12 AI-referrer sessions/week has shown strong Share of Model growth, even if the absolute numbers seem small.
+</Note>
+
+## Metric 3: New-Customer Share
+
+AI-agent recommendations are a top-of-funnel discovery channel. When the loop improves a product's Share of Model, you should see its new-customer purchase rate increase.
+
+Track this per product in your Shopify analytics: filter orders for the focus product and look at first-time buyer percentage. Compare pre- and post-loop-deep-pass results to measure the impact.
+
+## Suggested Review Cadence
+
+| Check | Frequency | Where |
+|-------|-----------|-------|
+| Run report | Daily | Claude session output |
+| AI referrer trends | Daily (in report) | Loop run report |
+| Agentic Storefronts | Weekly | Shopify Admin |
+| New-customer share | Monthly | Shopify Analytics |

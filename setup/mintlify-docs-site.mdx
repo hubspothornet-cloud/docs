@@ -1,0 +1,102 @@
+---
+title: "Set Up Your Mintlify Docs Site for the AEO Growth Loop"
+sidebarTitle: "Docs Site Setup"
+description: "Create a Mintlify docs site on GitHub, configure it for the AEO loop, and add a product-facts page for each of your core products."
+---
+
+The AEO Growth Loop drafts buyer guides and comparison articles to a Mintlify docs site hosted at a domain like `docs.yourstore.com`. Mintlify is a docs-as-code platform — your content lives as MDX files in a GitHub repo, and every push auto-deploys the site. The loop writes files locally; you review and push.
+
+## Create Your Mintlify Site
+
+<Steps>
+  <Step title="Sign up for Mintlify">
+    Go to [mintlify.com](https://mintlify.com) and sign up. A free hobby tier is available; paid tiers add custom domains and additional features.
+  </Step>
+  <Step title="Connect GitHub and create your repo">
+    During onboarding, connect your GitHub account, create (or select) a repository for your docs, and install the Mintlify GitHub App on that repo.
+  </Step>
+  <Step title="Note your config file name">
+    Mintlify scaffolds a starter repo. Note whether your config file is `docs.json` (new projects) or `mint.json` (older projects) — you'll need this when filling in the template placeholder `{{DOCS_CONFIG_FILE}}`.
+  </Step>
+  <Step title="Clone the repo and note the path">
+    Clone the repo to your machine:
+
+    ```bash
+    git clone https://github.com/your-org/your-docs-repo.git
+    ```
+
+    Note the absolute local path (e.g., `/Users/you/Documents/GitHub/my-docs`). This becomes your `{{DOCS_REPO_PATH}}` placeholder in the loop template.
+  </Step>
+  <Step title="(Optional) Run a local preview">
+    Install the Mintlify CLI (requires Node.js 20.17+) and start a local dev server:
+
+    ```bash
+    npm i -g mint
+    mint dev
+    ```
+
+    Preview your site at [localhost:3000](http://localhost:3000).
+  </Step>
+</Steps>
+
+## Set Up a Custom Domain
+
+A custom domain like `docs.yourstore.com` makes citations more trustworthy to AI engines — a subdomain of your store's primary domain carries the same domain authority signals.
+
+<Steps>
+  <Step title="Open custom domain settings">
+    In the Mintlify dashboard, open your project and navigate to the custom domain settings panel.
+  </Step>
+  <Step title="Enter your subdomain">
+    Enter your desired subdomain (e.g., `docs.yourstore.com`).
+  </Step>
+  <Step title="Add the TXT verification record">
+    Mintlify will show you a TXT record. Add it at your DNS provider and wait for it to verify. This typically takes a few minutes but can take up to an hour.
+  </Step>
+  <Step title="Add the CNAME record">
+    Once the TXT record verifies, add a CNAME record at your DNS provider:
+
+    ```text
+    docs  →  cname.mintlify.builders
+    ```
+
+    DNS propagates in 1–24 hours. SSL is provisioned automatically once the CNAME resolves.
+  </Step>
+</Steps>
+
+<Warning>
+  Add the CNAME only after the TXT record verifies. Adding both at once can delay SSL provisioning.
+</Warning>
+
+## Structure the Repo for the Loop
+
+The loop expects one folder per product in your docs repo, with a `data.mdx` Product Facts file inside each one.
+
+- Create one folder per product (e.g., `/magnesium-complex/`, `/fetal-doppler/`).
+- Inside each folder, add a `data.mdx` file — the **Product Facts page**. This is the single source of truth for that product's price, key specs, warranty, and ratings. The loop grounds every fact it writes in these pages.
+
+Here's a minimal example of a `data.mdx` Product Facts page:
+
+```mdx
+---
+title: "Magnesium Complex — Product Facts"
+---
+
+## Product Facts
+
+| Field | Value |
+|-------|-------|
+| Price | $29.99 |
+| SKU | MAG-300-90 |
+| Warranty | 30-day satisfaction guarantee |
+| Rating | 4.7 / 5 (312 reviews) |
+| Return policy | 30 days, no questions asked |
+```
+
+<Tip>
+  If you skip the `data.mdx` files, the loop will create them on its first run using live Shopify product data and flag them for your review.
+</Tip>
+
+<Warning>
+  Only put real, verifiable values in `data.mdx`. The loop's never-fabricate rule means it will flag and omit values it can't verify against this file.
+</Warning>

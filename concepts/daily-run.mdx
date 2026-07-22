@@ -1,0 +1,50 @@
+---
+title: "Inside the AEO Growth Loop: What Happens on Each Daily Run"
+sidebarTitle: "Daily Run"
+description: "Each daily run picks a focus product, writes Knowledge Base Q&As, updates the PDP and schema, drafts docs articles, and produces a flagged run report."
+---
+
+Each day the loop fires as a scheduled task in Claude, executes a fixed sequence of operations, and produces a run report. The run is self-contained — it doesn't depend on any previous session's context.
+
+## Focus Product Selection
+
+The loop starts by querying your Shopify analytics with `run-analytics-query` to read recent traffic, conversion rates, and search terms for your core products.
+
+- **Mon–Thu** — focuses on one of your four core products, rotating by weekday.
+- **Friday** — selects from your rotating catalog based on which product shows the most improvement headroom.
+
+The selection rationale is included in the run report so you always know why a given product was chosen.
+
+## Output Volume Per Run
+
+| Output | Volume |
+|--------|--------|
+| Knowledge Base Q&As written | 20–30 |
+| PDP answer block | 1 (focus product) |
+| `aeo.*` metafields updated | 1 product |
+| New docs articles drafted | 2–4 |
+| Existing docs pages refreshed | 2–3 |
+| Run report | 1 |
+
+## Run Report
+
+The run report is generated at the end of every run. It covers:
+
+- **Focus product** — which product was selected and why
+- **KB Q&As written** — total count and a sample of questions addressed
+- **PDP and schema changes** — a summary of what was rewritten or updated
+- **Docs articles** — file paths for newly drafted and refreshed articles
+- **Flagged items** — missing specs, unverifiable claims, or gaps in `data.mdx` that need your attention
+- **AI-referrer trend** — directional traffic movement for the focus product
+
+<Tip>
+  Scan the flagged items section first. If the loop couldn't verify a spec, it omitted it rather than guessing — your action is to add the correct value to `data.mdx`.
+</Tip>
+
+## Run Cadence and Compounding
+
+Each core product gets a deep pass roughly once per week. The loop builds on prior runs: new Q&As extend coverage rather than duplicating it, refreshed docs articles incorporate data from more recent runs, and the schema grows more complete over time.
+
+<Note>
+  The first 1–2 passes on any product are the most impactful. After that, the loop shifts to extending coverage depth and refreshing stale content.
+</Note>

@@ -1,0 +1,85 @@
+{
+  "projectType": "saas",
+  "projectName": "AEO Growth Loop",
+  "projectDescription": "A hands-off daily agent loop that grows your Shopify store's Share of Model — how often AI shopping agents recommend and accurately describe your products — by continuously optimizing product pages, structured data, a Shopify Knowledge Base, and a Mintlify docs site.",
+  "theme": "almond",
+  "primaryColor": "#ef7025",
+  "lightColor": "#eec9bc",
+  "darkColor": "#4fa1ab",
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Guide",
+        "groups": [
+          {
+            "group": "Overview",
+            "pages": [
+              "introduction",
+              "how-it-works",
+              "prerequisites"
+            ]
+          },
+          {
+            "group": "Setup",
+            "pages": [
+              "setup/shopify-connection",
+              "setup/mintlify-docs-site",
+              "setup/claude-folder",
+              "setup/template-configuration",
+              "setup/scheduled-task"
+            ]
+          },
+          {
+            "group": "Core Concepts",
+            "pages": [
+              "concepts/share-of-model",
+              "concepts/four-assets",
+              "concepts/daily-run",
+              "concepts/guardrails"
+            ]
+          },
+          {
+            "group": "Guides",
+            "pages": [
+              "guides/measuring-success",
+              "guides/product-facts-pages",
+              "guides/schema-install",
+              "guides/vertical-customization"
+            ]
+          },
+          {
+            "group": "Reference",
+            "pages": [
+              "reference/template-variables",
+              "reference/shopify-api-scopes",
+              "reference/faq"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "keyFeatures": [
+    "Daily autonomous agent loop running in Claude",
+    "Shopify Knowledge Base Q&A metaobject generation (20–30 per day)",
+    "AI-optimized product description (PDP) rewrites with reversible markers",
+    "JSON-LD structured data (Product, Offer, FAQPage) generation and staging",
+    "Mintlify docs article drafting (2–4 new + 2–3 refreshed pages per run)",
+    "ShopifyQL analytics to select the daily focus product",
+    "Share of Model tracking via Agentic Storefronts panel",
+    "Never-fabricate guardrails for compliance and AI citation quality",
+    "YMYL / vertical-specific claim safety rules",
+    "Human-gated git workflow — agent never commits or pushes"
+  ],
+  "publicApiSurface": [
+    "AEO-GROWTH-LOOP-TEMPLATE.md — main prompt template with {{PLACEHOLDERS}}",
+    "Shopify connector: run-analytics-query",
+    "Shopify connector: graphql_query / graphql_mutation (metafields, metaobjects)",
+    "Shopify connector: product read/update",
+    "<!-- AEO:START/END --> HTML markers in product descriptionHtml",
+    "aeo.* metafield namespace",
+    "qa-pair metaobject type (Shopify Knowledge Base)",
+    "outputs/pdp-schema/<product>/ staged schema files",
+    "data.mdx Product Facts page per product (docs repo)"
+  ]
+}

@@ -3,21 +3,37 @@
   "theme": "mint",
   "name": "Hornet Watersports Product Resource Center",
   "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
+    "primary": "#ef7025",
+    "light": "#eec9bc",
+    "dark": "#4fa1ab"
   },
   "favicon": "/favicon.svg",
-  "navigation": {
-    "pages": [
+  "logo": {
+    "light": "/logo/light.svg",
+    "dark": "/logo/dark.svg"
+  },
+  "navbar": {
+    "links": [
       {
-        "group": "Getting Started",
-        "pages": [
-          "index",
-          "quickstart"
-        ]
+        "href": "https://www.hornetwatersports.com/collections/dragon-boat",
+        "label": "Shop Dragon Boat"
+      },
+      {
+        "href": "https://www.hornetwatersports.com/collections/accessories",
+        "label": "Shop Accessories"
+      },
+      {
+        "href": "https://www.hornetwatersports.com/collections/indoor-rowing-1",
+        "label": "Shop Indoor Rowing"
       }
     ],
+    "primary": {
+      "type": "button",
+      "label": "Shop Hornet",
+      "href": "https://www.hornetwatersports.com/"
+    }
+  },
+  "navigation": {
     "groups": [
       {
         "group": "Start Here",
@@ -52,6 +68,7 @@
           {
             "group": "Verified Product Facts",
             "icon": "clipboard-list",
+            "hidden": true,
             "pages": [
               "dragon-boat/data/sting-plus-graphic-paddle-shared-specs",
               "dragon-boat/data/stealth-performance-series-shared-specs",
@@ -75,8 +92,7 @@
               "dragon-boat/data/pink-black-dragon-boat-paddle-bag",
               "dragon-boat/data/hornet-paddle-blade-cover-black-pink-silver",
               "dragon-boat/data/paddle-cleaner-carbon-fiber-fiberglass-v2"
-            ],
-            "hidden": true
+            ]
           }
         ]
       },
@@ -95,6 +111,7 @@
           {
             "group": "Verified Product Facts",
             "icon": "clipboard-list",
+            "hidden": true,
             "pages": [
               "kayak/data/hornet-kayak-paddle-shared-specs",
               "kayak/data/hornet-kayak-paddle-making-waves",
@@ -107,8 +124,7 @@
               "kayak/data/hornet-kayak-paddle-paw-print",
               "kayak/data/paw-print-anti-slip-kayak-seat-cushion",
               "kayak/data/non-slip-cushioned-paddling-pants-capri-length"
-            ],
-            "hidden": true
+            ]
           }
         ]
       },
@@ -126,58 +142,20 @@
           {
             "group": "Verified Product Facts",
             "icon": "clipboard-list",
+            "hidden": true,
             "pages": [
               "rowing-machine/data/anti-slip-rowing-machine-cushion-concept2",
               "rowing-machine/data/memory-foam-cushion-made-for-concept2",
               "rowing-machine/data/rowing-machine-seat-cushion-fits-concept2",
               "rowing-machine/data/rowing-and-sculling-anti-slip-seat-pad"
-            ],
-            "hidden": true
+            ]
           }
         ]
       }
     ]
   },
-  "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
-  },
-  "navbar": {
-    "links": [
-      {
-        "href": "https://www.hornetwatersports.com/collections/dragon-boat",
-        "label": "Shop Dragon Boat"
-      },
-      {
-        "href": "https://www.hornetwatersports.com/collections/accessories",
-        "label": "Shop Accessories"
-      },
-      {
-        "href": "https://www.hornetwatersports.com/collections/indoor-rowing-1",
-        "label": "Shop Indoor Rowing"
-      }
-    ],
-    "primary": {
-      "type": "button",
-      "label": "Shop Hornet",
-      "href": "https://www.hornetwatersports.com/"
-    }
-  },
-  "contextual": {
-    "options": [
-      "copy",
-      "view",
-      "chatgpt",
-      "claude",
-      "perplexity",
-      "mcp",
-      "cursor",
-      "vscode"
-    ]
-  },
   "footer": {
-    "socials": {
-    }
+    "socials": {}
   },
   "description": "Product specifications, comparisons, buying guidance, and care information for Hornet Watersports dragon boat, kayak, and indoor rowing products."
 }

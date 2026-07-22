@@ -1,0 +1,68 @@
+---
+title: "Fill In the AEO Loop Template Placeholders Correctly"
+sidebarTitle: "Template Config"
+description: "Open AEO-GROWTH-LOOP-TEMPLATE.md and replace each placeholder with your store's real values: name, domain, products, policy, warranty, and rating."
+---
+
+The AEO Growth Loop runs from a single prompt file — `AEO-GROWTH-LOOP-TEMPLATE.md`. Before you schedule it, you need to replace every `{{PLACEHOLDER}}` with your store's real values. The VARIABLES table at the top of the file lists every placeholder and what it expects.
+
+## Required Placeholders
+
+Replace all of the following before scheduling the loop. Leaving any placeholder unfilled will cause the run to fail or produce incorrect output.
+
+| Placeholder | What to put here |
+|---|---|
+| `{{STORE_NAME}}` | Your store's display name (e.g., `SonoHealth`) |
+| `{{STORE_DOMAIN}}` | Your Shopify domain (e.g., `sonohealth.com`) |
+| `{{SHOPIFY_HANDLE}}` | Your store's Shopify handle |
+| `{{DOCS_DOMAIN}}` | Your docs subdomain (e.g., `docs.sonohealth.com`) |
+| `{{DOCS_REPO_PATH}}` | Absolute local path to your cloned docs repo |
+| `{{DOCS_CONFIG_FILE}}` | `docs.json` or `mint.json` depending on your repo |
+| `{{CORE_PRODUCT_MON}}` | Monday's focus product (Shopify handle) |
+| `{{CORE_PRODUCT_TUE}}` | Tuesday's focus product (Shopify handle) |
+| `{{CORE_PRODUCT_WED}}` | Wednesday's focus product (Shopify handle) |
+| `{{CORE_PRODUCT_THU}}` | Thursday's focus product (Shopify handle) |
+| `{{ROTATING_PRODUCTS}}` | Comma-separated handles for Friday's rotation |
+| `{{RETURN_POLICY}}` | Your real return policy (e.g., `30 days, no questions asked`) |
+| `{{WARRANTY}}` | Your real warranty terms |
+| `{{STORE_RATING}}` | Your real average rating (e.g., `4.7`) |
+| `{{REVIEW_COUNT}}` | Your real review count |
+
+<Warning>
+  Never put aspirational numbers in. The rating, review count, warranty, and return policy must be your real, verifiable ones. AI engines and legal regimes both penalize fabricated claims.
+</Warning>
+
+## Choosing Your Four Core Products
+
+Core products (Monday through Thursday) get roughly 85% of the loop's attention each week. Choose them deliberately.
+
+Pick products with the most **new-customer headroom** — not necessarily your current bestsellers. Good criteria:
+
+- Products with incomplete Q&A coverage in your Knowledge Base
+- Products that appear in AI shopping queries but aren't being cited
+- Products with high traffic but low conversion (a gap the loop's PDP work can close)
+- Products where competitors are getting cited but you aren't
+
+<Tip>
+  Check your Agentic Storefronts panel to see which products are already getting AI-agent traffic. Prioritize the ones with traffic but low citation accuracy — those are the highest-leverage targets for the loop.
+</Tip>
+
+Friday's rotating slot (`{{ROTATING_PRODUCTS}}`) is for secondary products that don't need daily attention but benefit from periodic refresh. Include three to five handles, separated by commas.
+
+## Adapting the Vertical Block
+
+The template ships with a **YMYL (Your Money or Your Life)** medical-safety guardrail written for health, device, and supplement stores. This block instructs the loop to qualify claims carefully, cite evidence appropriately, and never overstate efficacy.
+
+- **If your store is in a health, device, or supplement vertical**, keep the block verbatim. It protects you legally and improves citation quality with AI engines that apply YMYL filters.
+- **If your store is in a different vertical**, replace the block with the claim rules appropriate for your category. The principle is the same: calibrated, grounded, well-qualified claims earn AI citations. Overstated claims get filtered out.
+
+Example guidance by vertical:
+
+| Vertical | Key claim rule |
+|---|---|
+| Consumer electronics | Include FCC/safety certification numbers where relevant; qualify performance claims with test conditions |
+| Food & beverage | Follow FDA nutrition claim guidelines; distinguish "contains" from "provides a therapeutic benefit" |
+| Financial products | Include required disclosure language; qualify projections with standard risk language |
+| Home goods | Cite test standards (UL, ASTM, etc.) for safety claims; qualify dimension tolerances |
+
+If you're unsure which claim rules apply to your category, consult your legal team before running the loop at scale.

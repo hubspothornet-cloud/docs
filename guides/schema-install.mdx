@@ -1,0 +1,75 @@
+---
+title: "Install the AEO JSON-LD Schema Snippet in Your Store"
+sidebarTitle: "Schema Install"
+description: "One-time installation of the AEO loop's Liquid schema snippet gives every product page automatic JSON-LD structured data fed from aeo.* metafields."
+---
+
+The AEO Growth Loop generates JSON-LD structured data (Product, Offer, FAQPage) and stores it in `aeo.*` metafields on each Shopify product. To inject that schema into your live product pages, you install a Liquid snippet once. After that, the loop's daily metafield updates flow into the page automatically — no further theme edits needed.
+
+## Where to Find the Snippet
+
+After the loop has run at least once for a product, it stages the schema snippet to `outputs/pdp-schema/<product-handle>/`.
+
+Inside that folder you'll find:
+
+- **`schema-snippet.liquid`** — the Liquid snippet that reads `aeo.*` metafields and outputs JSON-LD
+- **`INSTALL.md`** — product-specific installation instructions
+
+These files appear in your docs repo as uncommitted changes after the first run.
+
+## Installing the Snippet
+
+<Steps>
+  <Step title="Open the theme code editor">
+    In Shopify Admin, go to **Online Store → Themes → Edit code**.
+  </Step>
+  <Step title="Create the aeo-schema snippet">
+    In the **Snippets** folder, click **Add a new snippet** and name it `aeo-schema`.
+  </Step>
+  <Step title="Copy the snippet contents">
+    Open `outputs/pdp-schema/<product-handle>/schema-snippet.liquid` from your local docs repo and copy its full contents.
+  </Step>
+  <Step title="Paste into the theme editor">
+    Paste the copied contents into the new `aeo-schema` snippet in the Shopify theme editor.
+  </Step>
+  <Step title="Save the snippet">
+    Click **Save**.
+  </Step>
+  <Step title="Include the snippet in your product template">
+    Open your product section file — usually `sections/main-product.liquid` (or whatever section your `templates/product.json` points to). Add the following line inside the `<head>` block or just before the closing `</article>` tag of the product section, wherever you want the schema to render:
+
+    ```liquid
+    {% render 'aeo-schema' %}
+    ```
+
+    <Note>
+      If your theme uses a JSON template (`templates/product.json`), you cannot add Liquid tags directly to that file. Instead, open the `.liquid` section file it references — look for `"type": "main-product"` in the JSON to find the correct section name.
+    </Note>
+  </Step>
+  <Step title="Verify the schema is live">
+    Save the template, then navigate to a product page on your storefront. Right-click → **View Page Source** → search for `application/ld+json`. You should see the JSON-LD block generated from your `aeo.*` metafields.
+  </Step>
+</Steps>
+
+<Warning>
+  Only install the snippet after reviewing it. The loop never installs theme files automatically — this one-time step requires your review and action.
+</Warning>
+
+## After Installation
+
+Once the snippet is installed, every future loop run that updates `aeo.*` metafields will automatically update the live schema on that product's page. You don't need to re-edit the theme — the snippet reads the metafields dynamically on every page load.
+
+<Tip>
+  Use Google's Rich Results Test at [search.google.com/test/rich-results](https://search.google.com/test/rich-results) to verify your schema after installation.
+</Tip>
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="Schema not appearing in page source">
+    Check that the `{% render 'aeo-schema' %}` line is present in the correct template file and that the product has `aeo.*` metafields set. If the metafields are missing, run the loop once for that product to populate them, then reload the product page.
+  </Accordion>
+  <Accordion title="JSON-LD validation errors">
+    Check the values in the product's `aeo.*` metafields directly in **Shopify Admin → Products → [Product] → Metafields**. Ensure your `data.mdx` facts page has complete, correctly formatted values — malformed entries in `data.mdx` are the most common source of validation errors.
+  </Accordion>
+</AccordionGroup>

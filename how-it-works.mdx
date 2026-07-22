@@ -1,0 +1,57 @@
+---
+title: "How the AEO Growth Loop Works: The Daily Run Sequence"
+sidebarTitle: "How It Works"
+description: "Each run picks a focus product, writes Knowledge Base Q&As, optimizes the product page and structured data, drafts docs articles, and files a run report."
+---
+
+On each scheduled run, the loop executes a fixed sequence of steps autonomously inside Claude. It uses the Shopify connector for analytics reads, product updates, and metaobject writes — and edits your docs repo through a connected local folder. Nothing is committed or pushed to your docs site without your review; the agent deliberately stops short of git operations and leaves all docs changes as working-tree files for you to inspect first.
+
+## The Daily Sequence
+
+<Steps>
+  <Step title="Pick Today's Focus Product">
+    Claude runs a `run-analytics-query` call against your Shopify store to read recent traffic and conversion data. It selects the product with the most improvement headroom — typically one of your four core products cycling Monday through Thursday, with the rest of the catalog rotating on Fridays. The selection logic weighs session volume, add-to-cart rate, and current AEO coverage gaps.
+  </Step>
+  <Step title="Write Knowledge Base Q&As">
+    Generates 20–30 new `qa-pair` metaobjects tailored to the focus product and writes them directly to Shopify via `graphql_mutation`. They're visible immediately in **Shopify Admin → Content → Metaobjects** and go live in your Agentic Storefronts without any additional publishing step.
+  </Step>
+  <Step title="Optimize the Product Description">
+    Rewrites the answer block between `<!-- AEO:START -->` and `<!-- AEO:END -->` HTML markers inside the product's `descriptionHtml`. Content outside the markers is never touched. Before every write, the loop saves a full backup of the existing `descriptionHtml` and all `aeo.*` metafields so you can roll back to any prior version.
+  </Step>
+  <Step title="Update Structured Data">
+    Populates `aeo.*` metafields with fresh Product, Offer, and FAQPage JSON-LD values. The theme-side Liquid snippet — installed once by you during setup — reads these fields and injects the schema into the page `<head>` automatically on every storefront load.
+  </Step>
+  <Step title="Draft Docs Articles">
+    Writes 2–4 new MDX comparison or buyer-guide pages and refreshes 2–3 existing ones in your connected docs repo folder. All changes are left as uncommitted working-tree files. Open your git client, review the diff, and push when you're satisfied.
+  </Step>
+  <Step title="QA & Report">
+    Cross-checks all written content for factual consistency against your `data.mdx` product facts pages. Generates a run report summarizing every change made, and flags any claims or values it couldn't verify against your source-of-truth files. Review the report before committing docs changes.
+  </Step>
+</Steps>
+
+## What Runs Automatically vs. What You Control
+
+<Tabs>
+  <Tab title="Automatic (no action needed)">
+    The following happen on every run without any input from you:
+
+    - **Knowledge Base Q&As** — written directly to Shopify and live immediately in Agentic Storefronts.
+    - **PDP answer block** — the section between `<!-- AEO:START -->` and `<!-- AEO:END -->` is rewritten in `descriptionHtml`. Everything outside those markers is untouched.
+    - **`aeo.*` metafields** — Product, Offer, and FAQPage JSON-LD values are updated and served by your existing Liquid snippet.
+  </Tab>
+  <Tab title="Yours to review">
+    These items are prepared by the loop but require a deliberate action from you before they go live:
+
+    - **Docs MDX files** — left as uncommitted working-tree changes. Open your git client, review the diff, then commit and push when ready.
+    - **Schema Liquid snippet** — a one-time install you complete during setup. The loop never modifies your theme files.
+    - **Agentic Storefronts panel** — read this manually to confirm new Q&As are surfacing correctly. The loop doesn't verify its own Storefront output.
+  </Tab>
+</Tabs>
+
+## Run Cadence
+
+Each core product gets a deep optimization pass roughly once per week. The loop is designed to compound — each pass builds on the Q&As and docs articles written in prior runs, so the quality and coverage of your AEO footprint grow continuously rather than plateauing after the first few runs.
+
+<Note>
+  You can run it weekly by changing the schedule, but daily runs compound more smoothly and keep each run small enough to review in minutes.
+</Note>

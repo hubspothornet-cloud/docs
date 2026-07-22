@@ -1,0 +1,57 @@
+---
+title: "AEO Growth Loop Setup Prerequisites: What You Need"
+sidebarTitle: "Prerequisites"
+description: "To run the AEO Growth Loop you need a Shopify store with Agentic Storefronts enabled, Claude Pro/Max/Team, GitHub, and about 30–60 minutes for setup."
+---
+
+Before you set up the loop, make sure you have the following accounts and tools in place. Setup takes 30–60 minutes end-to-end; most of it is one-time configuration that you won't need to revisit.
+
+<CardGroup cols={2}>
+  <Card title="Shopify Store" icon="shopify">
+    Any plan with Admin API access. Agentic Storefronts and the Knowledge Base must be enabled: go to **Shopify Admin → Agentic Storefronts** and make sure **"Policies & FAQs are visible"** is toggled on for the Knowledge Base source.
+  </Card>
+  <Card title="Claude Pro/Max/Team" icon="robot">
+    The loop runs as a scheduled task in the Claude desktop app. Pro, Max, and Team plans support scheduled tasks. A desktop app installation is required — the web interface does not support local folder access.
+  </Card>
+  <Card title="GitHub Account" icon="github">
+    Your Mintlify docs repo lives on GitHub. You'll use GitHub Desktop (or any git client) to review and push the agent's docs edits. The agent never runs git commands — that's intentional, so you always have a chance to review before anything goes live.
+  </Card>
+  <Card title="Mintlify Account" icon="book">
+    The free hobby tier is sufficient to start. You'll connect Mintlify to your GitHub repo during setup. A custom domain (e.g., `docs.yourstore.com`) requires a paid Mintlify plan.
+  </Card>
+</CardGroup>
+
+## Enabling Agentic Storefronts
+
+The Knowledge Base Q&As written by the loop are only visible to AI shopping agents if your Agentic Storefronts Knowledge Base source is active. Follow these steps to confirm it's enabled:
+
+<Steps>
+  <Step title="Open Agentic Storefronts">
+    In Shopify Admin, search for **"Agentic Storefronts"** in the left nav or use the top search bar.
+  </Step>
+  <Step title="Open the settings panel">
+    Click into the Agentic Storefronts settings page.
+  </Step>
+  <Step title="Enable the Knowledge Base source">
+    Under **Knowledge Base sources**, make sure the **"Policies & FAQs"** toggle is turned on.
+  </Step>
+  <Step title="Confirm the Knowledge Base is active">
+    The Knowledge Base status should show as active. New `qa-pair` metaobjects written by the loop will appear here automatically after each run — no additional publishing step required.
+  </Step>
+</Steps>
+
+<Warning>
+  If you can't find Agentic Storefronts in your admin, your store may be on a plan that doesn't yet have access. Check Shopify's latest plan pages or contact Shopify support.
+</Warning>
+
+## What you'll set up
+
+Once your accounts are in place, setup follows five steps:
+
+1. **Connect Shopify to Claude** via the Shopify connector in the Claude desktop app.
+2. **Create a Mintlify docs site** and clone the repo to your local machine.
+3. **Add the docs folder to Claude** so the agent can read and write MDX files locally.
+4. **Fill in the loop template** with your store details, product facts, and brand voice.
+5. **Create the daily scheduled task** in Claude to run the loop on your chosen schedule.
+
+Ready to start? Head to [Setup](/setup/shopify-connection) for the full walkthrough.
