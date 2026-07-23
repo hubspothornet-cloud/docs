@@ -1,7 +1,7 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Hornet Watersports Product Resource Center",
+  "name": "Hornet",
   "colors": {
     "primary": "#ef7025",
     "light": "#eec9bc",
@@ -9,8 +9,9 @@
   },
   "favicon": "/favicon.svg",
   "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
+    "light": "https://cdn.shopify.com/s/files/1/0698/7353/files/hornet-docs-logo-blue-transparent.png?v=1784770645",
+    "dark": "https://cdn.shopify.com/s/files/1/0698/7353/files/hornet-docs-logo-blue-transparent.png?v=1784770645",
+    "href": "https://www.hornetwatersports.com"
   },
   "navbar": {
     "links": [
