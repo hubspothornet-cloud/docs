@@ -44,8 +44,25 @@
           "hornet-history-partnerships",
           "product-glossary",
           "shipping-returns-warranty",
-          "international-buying-and-dealers",
-          "dealers/spain",
+          {
+            "group": "Dealer Locations",
+            "icon": "map-location-dot",
+            "expanded": false,
+            "pages": [
+              "international-buying-and-dealers",
+              "dealers/spain",
+              "dealers/france",
+              "dealers/germany",
+              "dealers/hungary",
+              "dealers/italy",
+              "dealers/korea",
+              "dealers/malaysia-brunei",
+              "dealers/philippines",
+              "dealers/hong-kong-macau",
+              "dealers/taiwan",
+              "dealers/china"
+            ]
+          },
           "product-fact-page-template",
           "implementation/shopify-knowledge-base-q-and-a-drafts",
           "implementation/stealth-blue-s2-pdp-aeo-draft"
