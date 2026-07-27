@@ -87,6 +87,17 @@
           "paddling-gloves-for-dragon-boat-kayak-and-rowing",
           "dragon-boat/paddle-bags-blade-covers-and-protection",
           {
+            "group": "Dragon Boat Knowledge",
+            "icon": "book-open",
+            "expanded": false,
+            "pages": [
+              "dragon-boat/knowledge/introduction",
+              "dragon-boat/knowledge/dragon-boat-stroke-pull-or-push",
+              "dragon-boat/knowledge/how-custom-dragon-boat-paddles-are-created",
+              "dragon-boat/knowledge/sag1-dragon-boat-team-collaboration"
+            ]
+          },
+          {
             "group": "Verified Product Facts",
             "icon": "clipboard-list",
             "hidden": true,
@@ -178,5 +189,5 @@
   "footer": {
     "socials": {}
   },
-  "description": "Product specifications, comparisons, buying guidance, and care information for Hornet Watersports dragon boat, kayak, and indoor rowing products."
+  "description": "Official Hornet Watersports product guides, dragon boat coaching, IDBF approval information, custom paddle case studies, global dealer contacts, kayak resources, and indoor rowing accessories."
 }
